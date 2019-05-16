@@ -1,13 +1,14 @@
-# Project Name
+# freeSeats
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - Reservation: https://github.com/freeseats/wfong-service-reservations
+  - Top-Bar: https://github.com/freeseats/exzerone-search-bar
+  - Menu, Related Restaurants, Side-Bar: https://github.com/freeseats/Menu-Related-SideBar
+  - Restaurant Photos: https://github.com/freeseats/matthewjdiaz1-photo-service
+  - Reviews: https://github.com/freeseats/slhodak-reviews-and-impressions
 
 ## Table of Contents
 
