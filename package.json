@@ -5,7 +5,8 @@
   "main": ".eslintrc.js",
   "scripts": {
     "build": "webpack -d -w",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "seed": "node db/db.js"
   },
   "repository": {
     "type": "git",
