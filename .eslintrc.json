@@ -21,7 +21,8 @@
     "no-plusplus": 0,
     "no-path-concat": 0,
     "no-consistent-return": 0,
-    "no-prefer-template": 0
+    "no-prefer-template": 0,
+    "global-require": 0
   },
   "extends": [
     "eslint:recommended",
