@@ -26,22 +26,20 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Development
 
 ### Seeding Database
+- Before seeding, make sure to npm install
 - Log into mySQL from terminal: mySQL -u root -p
 - Enter password if set up with one
 - Create database in mySQL: CREATE DATABASE reservations;
 - Select database: use reservations;
+- Go to db/db.js to change your user and password on line 6, 7, and 10
 - Run script:
-```sh
 npm run seed
-```
 - To check database: SELECT * FROM restaurants;
 
 ## Usage
 
 From within the root directory:
-
 ```sh
-npm install -g webpack
 npm install
 npm run build
 npm start
