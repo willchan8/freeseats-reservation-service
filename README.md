@@ -12,13 +12,9 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
+1. [Usage](#Usage)
 
 ## Requirements
 
@@ -29,16 +25,25 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
-### Installing Dependencies
+### Seeding Database
+- Log into mySQL from terminal: mySQL -u root -p
+- Enter password if set up with one
+- Create database in mySQL: CREATE DATABASE reservations;
+- Select database: use reservations;
+- Run script:
+```sh
+npm run seed
+```
+- To check database: SELECT * FROM restaurants;
+
+## Usage
 
 From within the root directory:
 
 ```sh
 npm install -g webpack
 npm install
+npm run build
+npm start
 ```
-
-### Seeding Database
-```sh
-npm run seed
-```
+- In a broswer, go to: localhost:3020
