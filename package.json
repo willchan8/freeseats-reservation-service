@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -d -w",
     "start": "nodemon server/server.js",
-    "seed": "node db/db.js"
+    "seed": "node db/seed.js"
   },
   "repository": {
     "type": "git",
