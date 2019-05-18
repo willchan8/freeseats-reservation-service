@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Calendar from './Calendar.jsx';
+
 // class Reservations extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -14,8 +16,12 @@ import React from 'react';
 //   }
 // }
 
-const Reservations = () => (
-  <div>Hello World</div>
-);
+const Reservations = () => {
+  return (
+    <div>
+      <Calendar />
+    </div>
+  );
+};
 
 export default Reservations;
