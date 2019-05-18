@@ -1,11 +1,9 @@
-.week-day {
+.week-day-res {
   display: table-cell;
-  padding: .5rem 0;
-  font-size: .875rem;
+  font-size: 13px;
   text-align: center;
-  color: #999;
+  color: #2d333f;
   font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 400;
+  font-weight: 350;
   padding: 5px;
 }
