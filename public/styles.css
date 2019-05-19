@@ -1,3 +1,8 @@
+.reservations-calendar {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 .week-day-res {
   display: table-cell;
   font-size: 13px;
@@ -5,5 +10,47 @@
   color: #2d333f;
   font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 350;
-  padding: 5px;
+  padding-bottom: 7px;
+}
+
+.calendar-day-res, .calendar-day-res-empty, .calendar-day-restoday {
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #d8d9db;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 30px;
+  width: 30px;
+  background-clip: padding-box;
+}
+
+.calendar-day-res-empty {
+  cursor: default;
+}
+
+.calendar-day-res:hover {
+  border: 2px solid #da3743;
+  /* left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+}
+
+.calendar-day-res::after {
+  box-sizing: border-box;
+  position: fixed;
+  overflow: hidden;
+  visibility: hidden;
+  top: -5000px;
+  height: 10000px;
+  width: auto;
+  z-index: -1;
+}
+
+.calendar-day-restoday {
+  /* left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+  border: 2px solid #da3743;
 }

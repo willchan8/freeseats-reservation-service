@@ -11,6 +11,7 @@ class Calendar extends React.Component {
       weekDays: moment.weekdaysShort(),
       firstDayOfMonth: moment(),
       daysInMonth: moment(),
+      currentDay: moment(),
     };
   }
 
@@ -28,18 +29,24 @@ class Calendar extends React.Component {
     return monthDays;
   }
 
+  currentDay() {
+    return this.state.currentDay.format('D');
+  }
+
   render() {
+    // refactor blanks to get prev month last days to insert before 1st day of current month
     const blanks = [];
     for (let i = 0; i < this.firstDayOfMonth(); i++) {
       blanks.push(
-        <td key={i} className="calendar-day-res empty">{''}</td>,
+        <td key={`blank: ${i}`} className="calendar-day-res-empty">{''}</td>,
       );
     }
 
     const daysInMonth = [];
     for (let d = 1; d <= this.daysInMonth(); d++) {
+      const currentDay = d == this.currentDay() ? 'today' : '';
       daysInMonth.push(
-        <td key={d} className="calendar-day-res">
+        <td key={d} className={`calendar-day-res${currentDay}`}>
           {d}
         </td>,
       );
