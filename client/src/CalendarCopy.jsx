@@ -25,14 +25,13 @@ class CalendarCopy extends React.Component {
         currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
       });
     } 
-    }
+  }
 
-    nextMonthClick() {
-      this.setState({
-        currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
-      });
-      console.log('next:' , this.state.currentMonth);
-    }
+  nextMonthClick() {
+    this.setState({
+      currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
+    });
+  }
 
   render() {
     let weekDaysName = this.state.weekDays.map((day) => {
@@ -43,9 +42,17 @@ class CalendarCopy extends React.Component {
       <div className="res-calendar-wrapper">
         
         <div className="res-month-title">
-          <span className="prev-month" onClick={this.prevMonthClick}></span>
-          <span className="res-calendar-nav">{dateFns.format(this.state.currentMonth, 'MMMM YYYY')}</span>
-          <span className="next-month" onClick={this.nextMonthClick}></span>
+          <div className="col-start">
+            <div className="prev-month" onClick={this.prevMonthClick}></div>
+          </div>
+          
+          <div className="col col-center">
+            <span className="res-calendar-nav">{dateFns.format(this.state.currentMonth, 'MMMM YYYY')}</span>
+          </div>
+          
+          <div className="col-end">
+            <div className="next-month" onClick={this.nextMonthClick}></div>
+          </div>
         </div>
 
         <table className="reservations-calendar">
