@@ -1,6 +1,18 @@
+.res-calendar-wrapper {
+  height: 288px;
+  width: 302px;
+  /* display: flex; */
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0px 1px;
+  padding: 16px 0px;
+  background-color: #f1f2f4;
+}
+
 .reservations-calendar {
   border-collapse: collapse;
   border-spacing: 0;
+  margin: 0 25px;
 }
 
 .week-day-res {
@@ -24,6 +36,10 @@
   background-clip: padding-box;
 }
 
+.calendar-day-res, .calendar-day-restoday {
+  background-color: #fff;
+}
+
 .calendar-day-res-empty {
   cursor: default;
 }
@@ -45,4 +61,45 @@
 
 .calendar-day-restoday {
   border: 2px solid #da3743;
+}
+
+.res-month-title {
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.res-calendar-nav {
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 6px;
+  padding: 6px 58px;
+}
+
+.prev-month, .next-month {
+  height: 32px;
+  width: 32px;
+  border: 1px solid #d8d9db;
+  border-radius: 50%;
+  cursor: pointer;
+  background-size: 8px 10px;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+.prev-month:hover, .next-month:hover {
+  border: 2px solid #da3743;
+}
+
+.prev-month {
+  /* background-image: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-pointing-to-the-left.svg"); */
+  background-image: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-pointing-to-the-left+(1).svg");
+}
+
+.next-month {
+  background-image: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/right-chevron.svg");
 }
