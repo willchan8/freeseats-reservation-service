@@ -13,7 +13,6 @@ class Calendar extends React.Component {
       currentMonth: new Date(),
       selectedDay: new Date(),
       currentDay: new Date(),
-      // currentDay: moment(),
     };
 
     this.prevMonthClick = this.prevMonthClick.bind(this);
@@ -22,7 +21,6 @@ class Calendar extends React.Component {
   }
 
   currentDay() {
-    // return this.state.currentDay.format('MMMM D');
     return dateFns.format(this.state.currentDay, 'D');
   }
 
@@ -69,11 +67,12 @@ class Calendar extends React.Component {
 
     const dateFormat = 'D';
     const rows = [];
+    let rowCount = 0;
     let days = [];
     let day = startDate;
     let formattedDate = '';
 
-    while(day <= endDate) {
+    while (rowCount < 6) {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
         const cloneDay = day;
@@ -96,9 +95,10 @@ class Calendar extends React.Component {
         <tr key={day}>{days}</tr>
       );
 
+      rowCount++;
       days = [];
     }
-
+    
     return rows;
   }
 
