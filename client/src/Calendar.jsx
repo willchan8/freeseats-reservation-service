@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import dateFns from 'date-fns';
 
 import '../../public/styles.css';
 
@@ -9,45 +10,19 @@ class Calendar extends React.Component {
 
     this.state = {
       weekDays: moment.weekdaysShort(),
-      firstDayOfMonth: moment(),
-      daysInMonth: moment(),
-      currentDay: moment(),
-      month: moment(),
-      prevMonth: moment(),
-      nextMonth: moment(),
+      currentMonth: new Date(),
+      selectedDay: new Date(),
+      currentDay: new Date,
     };
 
+    this.prevMonthClick = this.prevMonthClick.bind(this);
+    this.nextMonthClick = this.nextMonthClick.bind(this);
     this.changeDayClick = this.changeDayClick.bind(this);
-    this.changeNextMonthClick = this.changeNextMonthClick.bind(this);
-    this.changePrevMonthClick = this.changePrevMonthClick.bind(this);
-  }
-
-  firstDayOfMonth() {
-    const dateObj = this.state.firstDayOfMonth;
-    const firstDay = moment(dateObj).startOf('month').format('d');
-    return firstDay;
-  }
-
-  daysInMonth() {
-    const dateObj = this.state.daysInMonth;
-    const monthDays = moment(dateObj).daysInMonth();
-    return monthDays;
   }
 
   currentDay() {
-    return this.state.currentDay.format('D');
-  }
-
-  getMonth() {
-    return this.state.month.format('MMMM YYYY');
-  }
-
-  getPrevMonth() {
-    return this.state.prevMonth.subtract(1, 'month').format('MMMM YYYY');
-  }
-
-  getNextMonth() {
-    return this.state.nextMonth.add(1, 'month').format('MMMM YYYY');
+    // return this.state.currentDay.format('D');
+    return dateFns.format(this.state.currentDay, 'D');
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -57,65 +32,92 @@ class Calendar extends React.Component {
     // set state of clickedDate
   }
 
-  changePrevMonthClick() {
-    console.log('clicked prev month change');
+  prevMonthClick() {
+    let todayDate = moment().format('MMMM YYYY');
+    if (dateFns.format(this.state.currentMonth, 'MMMM YYYY') !== todayDate) {
+      this.setState({
+        currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
+      });
+    } 
   }
 
-  changeNextMonthClick() {
-    console.log('clicked next month change');
+  nextMonthClick() {
+    this.setState({
+      currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
+    });
+  }
+
+  renderDays() {
+    const dateFormat = 'dddd';
+    const days = [];
+
+    let startDate = dateFns.startOfWeek(this.state.currentMonth);
+
+    for (let i = 0; i < 7; i++) {
+      days.push(
+        <td key={i} className="calendar-day-res">{dateFns.format(dateFns.addDays(startDate, i), dateFormat)}</td>
+      )
+    }
+  }
+
+  renderCells() {
+    const monthStart = dateFns.startOfMonth(this.state.currentMonth);
+    const monthEnd = dateFns.endOfMonth(monthStart);
+    const startDate = dateFns.startOfWeek(monthStart);
+    const endDate = dateFns.endOfWeek(monthEnd);
+
+    const dateFormat = 'D';
+    const rows = [];
+    let days = [];
+    let day = startDate;
+    let formattedDate = '';
+
+    while(day <= endDate) {
+      for (let i = 0; i < 7; i++) {
+        formattedDate = dateFns.format(day, dateFormat);
+        const cloneDay = day;
+        const currentDay = formattedDate == this.currentDay() ? 'today' : '';
+        // fix currentDay to only highlight today'date not every month's day
+
+        days.push(
+          <td key={i} onClick={() => this.changeDayClick(dateFns.parse(cloneDay))} className={`calendar-day-res${currentDay}`}>
+            {formattedDate}
+          </td>
+        );
+
+        day = dateFns.addDays(day, 1);
+      }
+
+      rows.push(
+        <tr key={day}>{days}</tr>
+      );
+
+      days = [];
+    }
+
+    return rows;
   }
 
   render() {
-    // refactor blanks to get prev month last days to insert before 1st day of current month
-    const blanks = [];
-    for (let i = 0; i < this.firstDayOfMonth(); i++) {
-      blanks.push(
-        <td key={`blank: ${i}`} className="calendar-day-res-empty">{''}</td>,
-      );
-    }
-
-    const daysInMonth = [];
-    for (let d = 1; d <= this.daysInMonth(); d++) {
-      const currentDay = d == this.currentDay() ? 'today' : '';
-      daysInMonth.push(
-        <td key={d} value={d} onClick={() => this.changeDayClick(d)} className={`calendar-day-res${currentDay}`}>
-          {d}
-        </td>,
-      );
-    }
-
-    const totalSlots = [...blanks, ...daysInMonth];
-    const rows = [];
-    let cells = [];
-
-    totalSlots.forEach((row, i) => {
-      if (i % 7 !== 0) {
-        cells.push(row);
-      } else {
-        rows.push(cells);
-        cells = [];
-        cells.push(row);
-      }
-      if (i === totalSlots.length - 1) {
-        rows.push(cells);
-      }
-    });
-
     let weekDaysName = this.state.weekDays.map((day) => {
         return <th key={day} className="week-day-res">{day}</th>;
     });
 
-    let monthDays = rows.map((d, i) => {
-      return <tr key={i}>{d}</tr>;
-    });
-
-    return (
+    return(
       <div className="res-calendar-wrapper">
         
         <div className="res-month-title">
-          <span className="prev-month" onClick={this.changePrevMonthClick}></span>
-          <span className="res-calendar-nav">{this.getMonth()}</span>
-          <span className="next-month" onClick={this.changeNextMonthClick}></span>
+          <div className="col-start">
+            <div className="prev-month" onClick={this.prevMonthClick}></div>
+          </div>
+          
+          <div className="col col-center">
+            <span className="res-calendar-nav">{dateFns.format(this.state.currentMonth, 'MMMM YYYY')}</span>
+          </div>
+          
+          <div className="col-end">
+            <div className="next-month" onClick={this.nextMonthClick}></div>
+          </div>
         </div>
 
         <table className="reservations-calendar">
@@ -123,7 +125,8 @@ class Calendar extends React.Component {
             <tr>{weekDaysName}</tr>
           </thead>
           <tbody>
-            {monthDays}
+            {this.renderDays()}
+            {this.renderCells()}
           </tbody>
         </table>
       </div>
