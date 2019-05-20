@@ -12,7 +12,8 @@ class Calendar extends React.Component {
       weekDays: moment.weekdaysShort(),
       currentMonth: new Date(),
       selectedDay: new Date(),
-      currentDay: new Date,
+      currentDay: new Date(),
+      // currentDay: moment(),
     };
 
     this.prevMonthClick = this.prevMonthClick.bind(this);
@@ -21,7 +22,7 @@ class Calendar extends React.Component {
   }
 
   currentDay() {
-    // return this.state.currentDay.format('D');
+    // return this.state.currentDay.format('MMMM D');
     return dateFns.format(this.state.currentDay, 'D');
   }
 
@@ -76,8 +77,11 @@ class Calendar extends React.Component {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
         const cloneDay = day;
-        const currentDay = formattedDate == this.currentDay() ? 'today' : '';
-        // fix currentDay to only highlight today'date not every month's day
+        let currentDay = '';
+
+        if (dateFns.format(this.state.currentMonth, 'MMMM') === dateFns.format(new Date(), 'MMMM')) {
+          currentDay = formattedDate == this.currentDay() ? 'today' : '';
+        }
 
         days.push(
           <td key={i} onClick={() => this.changeDayClick(dateFns.parse(cloneDay))} className={`calendar-day-res${currentDay}`}>
