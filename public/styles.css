@@ -19,8 +19,8 @@
   cursor: pointer;
   border: 1px solid #d8d9db;
   font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 30px;
-  width: 30px;
+  height: 33px;
+  width: 36px;
   background-clip: padding-box;
 }
 
@@ -30,10 +30,6 @@
 
 .calendar-day-res:hover {
   border: 2px solid #da3743;
-  /* left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; */
 }
 
 .calendar-day-res::after {
@@ -48,9 +44,5 @@
 }
 
 .calendar-day-restoday {
-  /* left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; */
   border: 2px solid #da3743;
 }
