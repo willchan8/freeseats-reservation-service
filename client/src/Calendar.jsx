@@ -13,10 +13,13 @@ class Calendar extends React.Component {
       daysInMonth: moment(),
       currentDay: moment(),
       month: moment(),
-      allMonths: moment.months(),
+      prevMonth: moment(),
+      nextMonth: moment(),
     };
 
     this.changeDayClick = this.changeDayClick.bind(this);
+    this.changeNextMonthClick = this.changeNextMonthClick.bind(this);
+    this.changePrevMonthClick = this.changePrevMonthClick.bind(this);
   }
 
   firstDayOfMonth() {
@@ -28,8 +31,6 @@ class Calendar extends React.Component {
   daysInMonth() {
     const dateObj = this.state.daysInMonth;
     const monthDays = moment(dateObj).daysInMonth();
-    // may need to change to find # of days in current month
-    // moment("2012-01", "YYYY-MM").daysInMonth() // 31
     return monthDays;
   }
 
@@ -41,15 +42,12 @@ class Calendar extends React.Component {
     return this.state.month.format('MMMM YYYY');
   }
 
-  monthList() {
-    const months = [];
-    this.state.allMonths.map((data) => {
-      months.push(
-        <td>
-          <span>{data}</span>
-        </td>,
-      );
-    });
+  getPrevMonth() {
+    return this.state.prevMonth.subtract(1, 'month').format('MMMM YYYY');
+  }
+
+  getNextMonth() {
+    return this.state.nextMonth.add(1, 'month').format('MMMM YYYY');
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -57,6 +55,14 @@ class Calendar extends React.Component {
     console.log('clicked: ', e);
     // change red hover to day clicked
     // set state of clickedDate
+  }
+
+  changePrevMonthClick() {
+    console.log('clicked prev month change');
+  }
+
+  changeNextMonthClick() {
+    console.log('clicked next month change');
   }
 
   render() {
@@ -95,29 +101,29 @@ class Calendar extends React.Component {
       }
     });
 
+    let weekDaysName = this.state.weekDays.map((day) => {
+        return <th key={day} className="week-day-res">{day}</th>;
+    });
+
+    let monthDays = rows.map((d, i) => {
+      return <tr key={i}>{d}</tr>;
+    });
+
     return (
       <div className="res-calendar-wrapper">
         
         <div className="res-month-title">
-          <span className="prev-month"></span>
+          <span className="prev-month" onClick={this.changePrevMonthClick}></span>
           <span className="res-calendar-nav">{this.getMonth()}</span>
-          <span className="next-month"></span>
+          <span className="next-month" onClick={this.changeNextMonthClick}></span>
         </div>
 
         <table className="reservations-calendar">
           <thead>
-            <tr>
-              {this.state.weekDays.map((day) => {
-                return <th key={day} className="week-day-res">
-                  {day}
-                </th>;
-              })}
-            </tr>
+            <tr>{weekDaysName}</tr>
           </thead>
           <tbody>
-            {rows.map((d, i) => {
-              return <tr key={i}>{d}</tr>;
-            })}
+            {monthDays}
           </tbody>
         </table>
       </div>
