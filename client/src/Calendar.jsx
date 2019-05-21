@@ -135,12 +135,20 @@ class Calendar extends React.Component {
       return <th key={day} className="week-day-res">{day}</th>;
     });
 
+    // conditional styling for prev button
+    let prevMonthButton = 'prev-month';
+    const currentMonth = dateFns.format(new Date(), 'MMMM YYYY');
+    const clickedMonth = dateFns.format(this.state.currentMonth, 'MMMM YYYY');
+    if (currentMonth === clickedMonth) {
+      prevMonthButton = 'greyed-prev-month';
+    }
+
     return (
       <div className="res-calendar-wrapper">
 
         <div className="res-month-title">
           <div className="col-start">
-            <div className="prev-month" onClick={this.prevMonthClick}></div>
+            <div className={prevMonthButton} onClick={this.prevMonthClick}></div>
           </div>
 
           <div className="col col-center">

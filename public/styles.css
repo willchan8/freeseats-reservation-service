@@ -88,7 +88,7 @@
   padding-top: 6px;
 }
 
-.prev-month, .next-month {
+.prev-month, .next-month, .greyed-prev-month {
   height: 32px;
   width: 32px;
   border: 1px solid #d8d9db;
@@ -104,9 +104,13 @@
   border: 2px solid #da3743;
 }
 
-.prev-month {
-  /* background-image: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-pointing-to-the-left.svg"); */
+.greyed-prev-month {
   background-image: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-pointing-to-the-left+(1).svg");
+  cursor: default;
+}
+
+.prev-month {
+  background-image: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-pointing-to-the-left.svg");
 }
 
 .next-month {
