@@ -18,6 +18,10 @@ class PartySize extends React.Component {
     this.setState({
       size: e.target.value,
     });
+
+    // Add 'For' before every option value selected but not show in drop down menu
+    // const default = 'For ';
+    // return 'For ' + e.target.value;
   }
 
   render() {
@@ -27,7 +31,7 @@ class PartySize extends React.Component {
     }
 
     const partySize = size.map((party) => {
-      return <option key={party} value={party}>{party}</option>;
+      return <option className="party-size-selected" key={party} value={party}>{party}</option>;
     });
 
     return (
