@@ -11,8 +11,8 @@ class Calendar extends React.Component {
     this.state = {
       weekDays: moment.weekdaysShort(),
       currentMonth: new Date(),
-      selectedDay: new Date(),
       currentDay: new Date(),
+      clickedDay: new Date(),
     };
 
     this.prevMonthClick = this.prevMonthClick.bind(this);
@@ -24,25 +24,29 @@ class Calendar extends React.Component {
     return dateFns.format(this.state.currentDay, 'D');
   }
 
-  // eslint-disable-next-line class-methods-use-this
   changeDayClick(e) {
-    console.log('clicked: ', e);
-    // change red hover to day clicked
-    // set state of clickedDate
+    // change red hover to day clicked and hide calendar view
+    // when calendar is clicked, show calendar with clicked date with red border instead of today's date
+
+    if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
+      this.setState({
+        clickedDay: e,
+      });
+    }
   }
 
   prevMonthClick() {
-    let todayDate = moment().format('MMMM YYYY');
+    const todayDate = moment().format('MMMM YYYY');
     if (dateFns.format(this.state.currentMonth, 'MMMM YYYY') !== todayDate) {
       this.setState({
-        currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
+        currentMonth: dateFns.subMonths(this.state.currentMonth, 1),
       });
-    } 
+    }
   }
 
   nextMonthClick() {
     this.setState({
-      currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
+      currentMonth: dateFns.addMonths(this.state.currentMonth, 1),
     });
   }
 
@@ -50,20 +54,18 @@ class Calendar extends React.Component {
     const dateFormat = 'dddd';
     const days = [];
 
-    let startDate = dateFns.startOfWeek(this.state.currentMonth);
+    const startDate = dateFns.startOfWeek(this.state.currentMonth);
 
     for (let i = 0; i < 7; i++) {
       days.push(
-        <td key={i} className="calendar-day-res">{dateFns.format(dateFns.addDays(startDate, i), dateFormat)}</td>
-      )
+        <td key={i} className="calendar-day-res">{dateFns.format(dateFns.addDays(startDate, i), dateFormat)}</td>,
+      );
     }
   }
 
   renderCells() {
     const monthStart = dateFns.startOfMonth(this.state.currentMonth);
-    const monthEnd = dateFns.endOfMonth(monthStart);
     const startDate = dateFns.startOfWeek(monthStart);
-    const endDate = dateFns.endOfWeek(monthEnd);
 
     const dateFormat = 'D';
     const rows = [];
@@ -79,46 +81,72 @@ class Calendar extends React.Component {
         let currentDay = '';
 
         if (dateFns.format(this.state.currentMonth, 'MMMM') === dateFns.format(new Date(), 'MMMM')) {
-          currentDay = formattedDate == this.currentDay() ? 'today' : '';
+          currentDay = formattedDate === this.currentDay() ? 'today' : '';
         }
 
+        // conditional styling for dates older than today's date
+        let pastCurrentDay = '';
+        if (dateFns.compareAsc(day, dateFns.subDays(new Date(), 1)) === -1) {
+          pastCurrentDay = 'pastCurrentDay';
+        }
+
+        // conditional styling for prev month dates
+        let prevMonthStyle = '';
+        const getPrevMonth = dateFns.subMonths(this.state.currentMonth, 1);
+        const prevMonth = dateFns.format(getPrevMonth, 'MMMM');
+
+        if (prevMonth === dateFns.format(day, 'MMMM')) {
+          prevMonthStyle = 'prevMonthStyle';
+        }
+
+        // conditional styling for next month dates
+        let nextMonthStyle = '';
+        const getNextMonth = dateFns.addMonths(this.state.currentMonth, 1);
+        const nextMonth = dateFns.format(getNextMonth, 'MMMM');
+
+        if (nextMonth === dateFns.format(day, 'MMMM')) {
+          nextMonthStyle = 'nextMonthStyle';
+        }
+
+        const classes = `${prevMonthStyle} ${nextMonthStyle} ${pastCurrentDay} calendar-day-res${currentDay}`;
+
         days.push(
-          <td key={i} onClick={() => this.changeDayClick(dateFns.parse(cloneDay))} className={`calendar-day-res${currentDay}`}>
+          <td key={i} onClick={() => this.changeDayClick(dateFns.parse(cloneDay))} className={classes}>
             {formattedDate}
-          </td>
+          </td >,
         );
 
         day = dateFns.addDays(day, 1);
       }
 
       rows.push(
-        <tr key={day}>{days}</tr>
+        <tr key={day}>{days}</tr>,
       );
 
       rowCount++;
       days = [];
     }
-    
+
     return rows;
   }
 
   render() {
-    let weekDaysName = this.state.weekDays.map((day) => {
-        return <th key={day} className="week-day-res">{day}</th>;
+    const weekDaysName = this.state.weekDays.map((day) => {
+      return <th key={day} className="week-day-res">{day}</th>;
     });
 
-    return(
+    return (
       <div className="res-calendar-wrapper">
-        
+
         <div className="res-month-title">
           <div className="col-start">
             <div className="prev-month" onClick={this.prevMonthClick}></div>
           </div>
-          
+
           <div className="col col-center">
             <span className="res-calendar-nav">{dateFns.format(this.state.currentMonth, 'MMMM YYYY')}</span>
           </div>
-          
+
           <div className="col-end">
             <div className="next-month" onClick={this.nextMonthClick}></div>
           </div>

@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+/* CALENDAR STYLES */
+
 .res-calendar-wrapper {
   height: 288px;
   width: 302px;
@@ -66,6 +68,10 @@
   border: 2px solid #da3743;
 }
 
+.clickedDate {
+  border: 2px solid #da3743;
+}
+
 .res-month-title {
   height: 34px;
   padding-bottom: 10px;
@@ -119,4 +125,16 @@
 
 .col-end {
   margin-right: 22px;
+}
+
+.prevMonthStyle, .nextMonthStyle {
+  background-color: #f1f2f4;
+}
+
+.pastCurrentDay {
+  color: #d8d8db;
+  cursor: default;
+}
+.pastCurrentDay:hover {
+  border: 1px solid #d8d9db;
 }
