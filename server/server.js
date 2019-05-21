@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const Availability = require('../db/db.js');
 
 const app = express();
-const port = 3020;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -21,4 +20,4 @@ app.get('/reservations', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`listening on port ${port}`));
+module.exports = app;
