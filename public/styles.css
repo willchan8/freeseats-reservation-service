@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+.reservations {
+  padding: .5rem 1rem 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  -webkit-box-shadow: 0 2px 8px rgba(153,153,153,.4);
+  box-shadow: 0 2px 8px rgba(153,153,153,.4);
+  width: 336px;
+}
+
 /* RESERVATION TITLE */
 .reservation-title-wrapper {
   display: flex;
@@ -24,9 +33,38 @@
   padding-bottom: 10px;
 }
 
+/* PARTY SIZE */
+.party-size-title {
+  font-weight: 550;
+  padding-bottom: .25rem;
+  padding-top: .5rem;
+  display: block;
+  flex-direction: column;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.party-size-list {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  border-bottom: 1px solid #d8d9db;
+}
+
+.party-size-list:hover {
+  border-bottom: 2px solid #da3743;
+}
+
+.party-size-wrapper {
+  padding-bottom: 10px;
+}
 
 /* CALENDAR STYLES */
-
 .res-calendar-wrapper {
   height: 288px;
   width: 302px;
