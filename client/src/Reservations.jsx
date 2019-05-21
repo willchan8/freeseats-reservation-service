@@ -16,16 +16,23 @@ class Reservations extends React.Component {
       date: moment(),
       time: '6PM',
     };
+
+    this.handleSize = this.handleSize.bind(this);
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  handleSize(e) {
+    this.setState({
+      partySize: e.target.value,
+    });
+  }
+
   render() {
     return (
       <div className="reservations">
         <div className="reservation-title-wrapper">
           <span className="make-res-title">Make a reservation</span>
         </div>
-        <PartySize />
+        <PartySize handleSize={this.handleSize} />
         <Calendar />
       </div>
     );

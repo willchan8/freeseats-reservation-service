@@ -35,6 +35,7 @@
 
 /* PARTY SIZE */
 .party-size-title {
+  font-size: 14px;
   font-weight: 550;
   padding-bottom: .25rem;
   padding-top: .5rem;
@@ -54,6 +55,10 @@
   height: 35px;
   background-color: #fff;
   border-bottom: 1px solid #d8d9db;
+  -webkit-appearance: none;
+  background: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-arrow-down.svg") no-repeat right;
+  background-position-x: 290px;
+  background-size: 8px 8px;
 }
 
 .party-size-list:hover {

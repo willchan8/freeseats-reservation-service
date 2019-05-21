@@ -6,10 +6,20 @@ class PartySize extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      size: 2,
+    };
+
+    this.handleSizeChange = this.handleSizeChange.bind(this);
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  handleSizeChange(e) {
+    this.props.handleSize(e);
+    this.setState({
+      size: e.target.value,
+    });
+  }
+
   render() {
     const size = [];
     for (let i = 1; i <= 20; i++) {
@@ -17,16 +27,13 @@ class PartySize extends React.Component {
     }
 
     const partySize = size.map((party) => {
-      if (party === 2) {
-        return <option key={party} value="" selected>{party}</option>;
-      }
       return <option key={party} value={party}>{party}</option>;
     });
 
     return (
       <div className="party-size-wrapper">
         <div className="party-size-title">Party Size</div>
-        <select className="party-size-list">
+        <select className="party-size-list" value={this.state.size} onChange={this.handleSizeChange}>
           {partySize}
         </select>
       </div>
