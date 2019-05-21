@@ -2,6 +2,29 @@
   box-sizing: border-box;
 }
 
+/* RESERVATION TITLE */
+.reservation-title-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  text-align: center;
+  height: 48px;
+  width: 302px;
+  padding-bottom: 10px;
+}
+
+.make-res-title {
+  line-height: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  border-bottom: 1px solid #d8d9db;
+  padding-bottom: 10px;
+}
+
+
 /* CALENDAR STYLES */
 
 .res-calendar-wrapper {
