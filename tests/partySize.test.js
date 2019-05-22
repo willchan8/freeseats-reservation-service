@@ -17,11 +17,16 @@ it('renders correctly', () => {
 });
 
 describe('Party Size Rendering', () => {
+  const wrapper = shallow(<PartySize />);
   it('renders a select drop down list', () => {
-    const wrapper = shallow(<PartySize />);
+    // const wrapper = shallow(<PartySize />);
     const list = wrapper.find('.party-size-list');
     expect(list.length).toBe(1);
     expect(list.find('.party-size-selected').length).toBe(20);
+  });
+
+  it('should have default party size be 2', () => {
+    expect(wrapper.state('size')).toBe(2);
   });
 
   // fix issue of this.props.handleSize not a function error

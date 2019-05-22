@@ -16,10 +16,15 @@ it('renders correctly', () => {
 
 
 describe('Time List Rendering', () => {
+  const wrapper = shallow(<Time />);
+
   it('renders a select drop down list', () => {
-    const wrapper = shallow(<Time />);
     const list = wrapper.find('.time-list');
     expect(list.length).toBe(1);
     expect(list.find('.time-selected').length).toBe(48);
+  });
+
+  it('should have a default time set to 6 PM', () => {
+    expect(wrapper.state('time')).toBe('6:00 PM');
   });
 });
