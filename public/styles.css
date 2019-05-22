@@ -2,8 +2,74 @@
   box-sizing: border-box;
 }
 
-/* CALENDAR STYLES */
+.reservations {
+  padding: .5rem 1rem 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  -webkit-box-shadow: 0 2px 8px rgba(153,153,153,.4);
+  box-shadow: 0 2px 8px rgba(153,153,153,.4);
+  width: 336px;
+}
 
+/* RESERVATION TITLE */
+.reservation-title-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  text-align: center;
+  height: 48px;
+  width: 302px;
+  padding-bottom: 10px;
+}
+
+.make-res-title {
+  line-height: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  border-bottom: 1px solid #d8d9db;
+  padding-bottom: 10px;
+}
+
+/* PARTY SIZE */
+.party-size-title {
+  font-size: 14px;
+  font-weight: 550;
+  padding-bottom: .25rem;
+  padding-top: .5rem;
+  display: block;
+  flex-direction: column;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.party-size-list {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  -webkit-appearance: none;
+  background: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-arrow-down.svg") no-repeat right;
+  background-position-x: 290px;
+  background-size: 8px 8px;
+}
+
+.party-size-wrapper:hover {
+  border-bottom: 2px solid #da3743;
+}
+
+.party-size-wrapper {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d8d9db;
+}
+
+/* CALENDAR STYLES */
 .res-calendar-wrapper {
   height: 288px;
   width: 302px;
@@ -12,6 +78,7 @@
   margin: 0px 1px;
   padding: 16px 0px;
   background-color: #f1f2f4;
+  border: 1px solid #d8d9db;
 }
 
 .reservations-calendar {
