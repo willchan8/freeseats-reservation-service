@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../public/styles.css';
 
@@ -37,12 +38,16 @@ class PartySize extends React.Component {
     return (
       <div className="party-size-wrapper">
         <div className="party-size-title">Party Size</div>
-        <select className="party-size-list" value={this.state.size} onChange={this.handleSizeChange}>
+        <select className="party-size-list" defaultValue="2" onChange={this.handleSizeChange}>
           {partySize}
         </select>
       </div>
     );
   }
 }
+
+PartySize.propTypes = {
+  handleSize: PropTypes.func,
+};
 
 export default PartySize;
