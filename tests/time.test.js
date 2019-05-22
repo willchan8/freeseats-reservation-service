@@ -1,17 +1,19 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
 
 import Time from '../client/src/Time.jsx';
 
 configure({ adapter: new Adapter() });
 
 it('renders correctly', () => {
-  const wrapper = shallow(
-    <Time />,
-  );
-  expect(wrapper).toMatchSnapshot();
+  const tree = renderer
+    .create(<Time />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
+
 
 describe('Time List Rendering', () => {
   it('renders a select drop down list', () => {

@@ -48,7 +48,7 @@ class Reservations extends React.Component {
         </div>
         <PartySize handleSize={this.handleSize} />
         <div className="date-time-wrapper">
-          <Date handleDate={this.handleDate} clickedDate={this.state.date} />
+          <Date handleDate={this.handleDate} />
           <Time handleTime={this.handleTime} />
         </div>
       </div>

@@ -1,17 +1,19 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
 
 import Calendar from '../client/src/Calendar.jsx';
 
 configure({ adapter: new Adapter() });
 
 it('renders correctly', () => {
-  const wrapper = shallow(
-    <Calendar />,
-  );
-  expect(wrapper).toMatchSnapshot();
+  const tree = renderer
+    .create(<Calendar />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
+
 
 describe('Calendar Rendering', () => {
   it('renders a table for calendar dates', () => {

@@ -58,7 +58,6 @@ class Date extends React.Component {
 
 Date.propTypes = {
   handleDate: PropTypes.func,
-  clickedDate: PropTypes.object,
 };
 
 export default Date;

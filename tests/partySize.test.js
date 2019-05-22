@@ -3,16 +3,17 @@ import {
   shallow, configure, mount, render,
 } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
 
 import PartySize from '../client/src/PartySize.jsx';
 
 configure({ adapter: new Adapter() });
 
 it('renders correctly', () => {
-  const wrapper = shallow(
-    <PartySize />,
-  );
-  expect(wrapper).toMatchSnapshot();
+  const tree = renderer
+    .create(<PartySize />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 describe('Party Size Rendering', () => {
