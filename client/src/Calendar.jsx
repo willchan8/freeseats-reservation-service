@@ -19,6 +19,26 @@ class Calendar extends React.Component {
     this.prevMonthClick = this.prevMonthClick.bind(this);
     this.nextMonthClick = this.nextMonthClick.bind(this);
     this.changeDayClick = this.changeDayClick.bind(this);
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.props.hideCalendar();
+    }
   }
 
   currentDay() {
@@ -26,14 +46,16 @@ class Calendar extends React.Component {
   }
 
   changeDayClick(e) {
-    // change red hover to day clicked and hide calendar view
+    // change red hover to day clicked
     // when calendar is clicked, show calendar with clicked date with red border instead of today's date
 
     if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
       this.props.handleDate(e);
+      this.props.changeDate(e);
       this.setState({
         clickedDay: e,
       });
+      this.props.hideCalendar();
     }
   }
 
@@ -144,7 +166,7 @@ class Calendar extends React.Component {
     }
 
     return (
-      <div className="res-calendar-wrapper">
+      <div className="res-calendar-wrapper" ref={this.setWrapperRef} >
 
         <div className="res-month-title">
           <div className="col-start">
@@ -176,6 +198,8 @@ class Calendar extends React.Component {
 
 Calendar.propTypes = {
   handleDate: PropTypes.func,
+  hideCalendar: PropTypes.func,
+  changeDate: PropTypes.func,
 };
 
 export default Calendar;

@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-import Calendar from './Calendar.jsx';
 import PartySize from './PartySize.jsx';
 import Time from './Time.jsx';
 import Date from './Date.jsx';
@@ -49,10 +48,9 @@ class Reservations extends React.Component {
         </div>
         <PartySize handleSize={this.handleSize} />
         <div className="date-time-wrapper">
-          <Date handleDate={this.handleDate} />
+          <Date handleDate={this.handleDate} clickedDate={this.state.date} />
           <Time handleTime={this.handleTime} />
         </div>
-        <Calendar handleDate={this.handleDate} />
       </div>
     );
   }
