@@ -33,8 +33,39 @@
   padding-bottom: 10px;
 }
 
-/* PARTY SIZE, TIME */
-.party-size-title, .time-title {
+/* PARTY SIZE, TIME, DATE */
+.date-time-wrapper {
+  display: flex;
+  flex: 1 100%;
+}
+
+.date-wrapper, .time-wrapper {
+  flex: 1 50%;
+}
+
+.time-wrapper {
+  margin-left: .5rem;
+}
+
+.date-title {
+  margin-bottom: 10px;
+}
+
+.display-date {
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  background-color: #fff;
+  -webkit-appearance: none;
+  background: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-arrow-down.svg") no-repeat right;
+  background-position-x: 130px;
+  background-size: 8px 8px;
+}
+
+.display-date:hover {
+  cursor: pointer;
+}
+
+.party-size-title, .time-title, .date-title {
   font-size: 14px;
   font-weight: 550;
   padding-bottom: .25rem;
@@ -55,15 +86,19 @@
   background-color: #fff;
   -webkit-appearance: none;
   background: url("https://s3-us-west-1.amazonaws.com/freeseats-imgs/chevron-arrow-down.svg") no-repeat right;
-  background-position-x: 290px;
+  background-position-x: 285px;
   background-size: 8px 8px;
 }
 
-.party-size-wrapper:hover, .time-wrapper:hover {
+.time-list {
+  background-position-x: 130px;
+}
+
+.party-size-wrapper:hover, .time-wrapper:hover, .date-wrapper:hover {
   border-bottom: 2px solid #da3743;
 }
 
-.party-size-wrapper, .time-wrapper {
+.party-size-wrapper, .time-wrapper, .date-wrapper {
   margin-bottom: 10px;
   border-bottom: 1px solid #d8d9db;
 }
