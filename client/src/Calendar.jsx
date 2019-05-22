@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import dateFns from 'date-fns';
+import PropTypes from 'prop-types';
 
 import '../../public/styles.css';
 
@@ -29,6 +30,7 @@ class Calendar extends React.Component {
     // when calendar is clicked, show calendar with clicked date with red border instead of today's date
 
     if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
+      this.props.handleDate(e);
       this.setState({
         clickedDay: e,
       });
@@ -173,5 +175,9 @@ class Calendar extends React.Component {
     );
   }
 }
+
+Calendar.propTypes = {
+  handleDate: PropTypes.func,
+};
 
 export default Calendar;
