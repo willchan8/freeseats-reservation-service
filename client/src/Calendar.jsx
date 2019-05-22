@@ -133,9 +133,7 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const weekDaysName = this.state.weekDays.map((day) => {
-      return <th key={day} className="week-day-res">{day}</th>;
-    });
+    const weekDaysName = this.state.weekDays.map(day => <th key={day} className="week-day-res">{day}</th>);
 
     // conditional styling for prev button
     let prevMonthButton = 'prev-month';

@@ -32,9 +32,7 @@ class Time extends React.Component {
       times.push(moment({ hour, minute: 30 }).format('h:mm A'));
     }
 
-    const timeOptions = times.map((time) => {
-      return <option className="time-selected" key={time} value={time}>{time}</option>;
-    });
+    const timeOptions = times.map(time => <option className="time-selected" key={time} value={time}>{time}</option>);
 
     return (
       <div className="time-wrapper">

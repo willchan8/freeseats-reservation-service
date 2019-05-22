@@ -33,9 +33,7 @@ class PartySize extends React.Component {
       size.push(i);
     }
 
-    const partySize = size.map((party) => {
-      return <option className="party-size-selected" key={party} value={party}>{party}</option>;
-    });
+    const partySize = size.map(party => <option className="party-size-selected" key={party} value={party}>{party}</option>);
 
     return (
       <div className="party-size-wrapper">

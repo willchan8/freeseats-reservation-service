@@ -1,5 +1,4 @@
 import React from 'react';
-import dateFns from 'date-fns';
 import moment from 'moment';
 
 import Calendar from './Calendar.jsx';
