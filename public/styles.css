@@ -21,7 +21,7 @@
   text-align: center;
   height: 48px;
   width: 302px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .make-res-title {
@@ -33,12 +33,11 @@
   padding-bottom: 10px;
 }
 
-/* PARTY SIZE */
+/* PARTY SIZE, TIME */
 .party-size-title, .time-title {
   font-size: 14px;
   font-weight: 550;
   padding-bottom: .25rem;
-  padding-top: .5rem;
   display: block;
   flex-direction: column;
   font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -65,7 +64,7 @@
 }
 
 .party-size-wrapper, .time-wrapper {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #d8d9db;
 }
 
