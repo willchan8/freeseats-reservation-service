@@ -28,6 +28,7 @@ class Reservations extends React.Component {
     this.handleClickCalendar = this.handleClickCalendar.bind(this);
     this.hideCalendar = this.hideCalendar.bind(this);
     this.changeDate = this.changeDate.bind(this);
+    this.getBookings = this.getBookings.bind(this);
   }
 
   handleSize(e) {
@@ -72,8 +73,20 @@ class Reservations extends React.Component {
     }
   }
 
-  checkAvailability() {
+  // checkAvailability() {}
 
+  getBookings() {
+    axios.get('/:id/reservations')
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  componentDidMount() {
+    this.getBookings();
   }
 
   render() {
