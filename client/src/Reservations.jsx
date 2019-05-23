@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import dateFns from 'date-fns';
+import axios from 'axios';
 
 import PartySize from './PartySize.jsx';
 import Time from './Time.jsx';
@@ -69,6 +70,10 @@ class Reservations extends React.Component {
         clickedDate: dateFns.format(e, 'ddd, M/D'),
       });
     }
+  }
+
+  checkAvailability() {
+
   }
 
   render() {
