@@ -83,6 +83,7 @@ class Reservations extends React.Component {
           <Time handleTime={this.handleTime} />
         </div>
         {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} /> : null}
+        <button className="find-table" >Find a Table</button>
       </div>
     );
   }
