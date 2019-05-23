@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import dateFns from 'date-fns';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import PartySize from './PartySize.jsx';
 import Time from './Time.jsx';
@@ -20,6 +21,7 @@ class Reservations extends React.Component {
       clickedDate: 'Today',
       time: '6:00 PM',
       displayCalendar: false,
+      bookings: null,
     };
 
     this.handleSize = this.handleSize.bind(this);
@@ -76,11 +78,14 @@ class Reservations extends React.Component {
   // checkAvailability() {}
 
   getBookings() {
-    axios.get('/:id/reservations')
-      .then(res => {
-        console.log(res);
+    axios.get('http://localhost:3020/reservations/1')
+      .then((res) => {
+        console.log(res.data);
+        this.setState({
+          bookings: res.data.booked,
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -102,9 +107,17 @@ class Reservations extends React.Component {
         </div>
         {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} /> : null}
         <button className="find-table" >Find a Table</button>
+        <div className="bookings">
+          <img src="https://s3-us-west-1.amazonaws.com/freeseats-imgs/Booking.png" height="18px" width="22px" />
+          <span className="bookings-caption">Booked {this.state.bookings} times today</span>
+        </div>
       </div>
     );
   }
 }
+
+Reservations.propTypes = {
+  id: PropTypes.number,
+};
 
 export default Reservations;

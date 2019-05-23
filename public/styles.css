@@ -122,11 +122,24 @@
   text-align: center;
   font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   padding: 12px 16px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .find-table:hover {
   opacity: 0.8;
+}
+
+/* BOOKINGS */
+.bookings {
+  padding-top: 20px;
+  display: flex;
+}
+
+.bookings-caption {
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding-left: 7px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* CALENDAR STYLES */

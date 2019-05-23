@@ -10,9 +10,8 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-app.get('/:id/reservations', (req, res) => {
-  const path = req.url.split('/');
-  const resID = Number(path[1]);
+app.get('/reservations/:id', (req, res) => {
+  const resID = Number(req.params.id);
 
   Availability.findOne({ where: { id: resID } })
     .then((main) => {
