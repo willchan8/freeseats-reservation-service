@@ -12,6 +12,7 @@ class Time extends React.Component {
     };
 
     this.handleTimeChange = this.handleTimeChange.bind(this);
+    this.onChangeFuncs = this.onChangeFuncs.bind(this);
   }
 
   handleTimeChange(e) {
@@ -19,6 +20,11 @@ class Time extends React.Component {
     this.setState({
       time: e.target.value,
     });
+  }
+
+  onChangeFuncs(e) {
+    this.handleTimeChange(e);
+    this.props.getBtnBack();
   }
 
   // check current time if today's date is selected from date component (need to pass down state from parent)
@@ -37,7 +43,7 @@ class Time extends React.Component {
     return (
       <div className="time-wrapper">
         <div className="time-title">Time</div>
-        <select className="time-list" defaultValue="6:00 PM" onChange={this.handleTimeChange}>
+        <select className="time-list" defaultValue="6:00 PM" onChange={(e) => { this.onChangeFuncs(e); }}>
           {timeOptions}
         </select>
       </div>
@@ -47,6 +53,7 @@ class Time extends React.Component {
 
 Time.propTypes = {
   handleTime: PropTypes.func,
+  getBtnBack: PropTypes.func,
 };
 
 export default Time;

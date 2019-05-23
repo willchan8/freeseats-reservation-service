@@ -48,6 +48,7 @@ class PartySize extends React.Component {
 
 PartySize.propTypes = {
   handleSize: PropTypes.func,
+  getBtnBack: PropTypes.func,
 };
 
 export default PartySize;

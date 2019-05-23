@@ -36,6 +36,7 @@ class Reservations extends React.Component {
     this.changeDate = this.changeDate.bind(this);
     this.checkAvailability = this.checkAvailability.bind(this);
     this.getBookings = this.getBookings.bind(this);
+    this.getBtnBack = this.getBtnBack.bind(this);
   }
 
   handleSize(e) {
@@ -80,6 +81,14 @@ class Reservations extends React.Component {
     }
   }
 
+  getBtnBack() {
+    this.setState({
+      findTableBtn: true,
+      showNextAvail: false,
+      noAvailMsg: false,
+    });
+  }
+
   checkAvailability() {
     // grab states (partySize, clickedDate, time)
     // if time selected is not 3:30PM to 11PM then render conditional message
@@ -115,14 +124,14 @@ class Reservations extends React.Component {
           <span className="make-res-title">Make a reservation</span>
         </div>
 
-        <PartySize handleSize={this.handleSize} />
+        <PartySize handleSize={this.handleSize} getBtnBack={this.getBtnBack} />
 
         <div className="date-time-wrapper">
           <Date handleClick={this.handleClickCalendar} clickedDate={this.state.clickedDate} />
-          <Time handleTime={this.handleTime} />
+          <Time handleTime={this.handleTime} getBtnBack={this.getBtnBack} />
         </div>
 
-        {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} /> : null}
+        {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} getBtnBack={this.getBtnBack} /> : null}
 
         {this.state.findTableBtn ? <button className="find-table" onClick={this.checkAvailability}>Find a Table</button> : null}
 

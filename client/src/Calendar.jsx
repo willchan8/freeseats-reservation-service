@@ -200,6 +200,7 @@ Calendar.propTypes = {
   handleDate: PropTypes.func,
   hideCalendar: PropTypes.func,
   changeDate: PropTypes.func,
+  getBtnBack: PropTypes.func,
 };
 
 export default Calendar;
