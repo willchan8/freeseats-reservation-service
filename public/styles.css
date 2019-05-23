@@ -98,8 +98,12 @@
   border-bottom: 2px solid #da3743;
 }
 
-.party-size-wrapper, .time-wrapper, .date-wrapper {
+.party-size-wrapper {
   margin-bottom: 10px;
+  border-bottom: 1px solid #d8d9db;
+}
+
+.date-wrapper, .time-wrapper {
   border-bottom: 1px solid #d8d9db;
 }
 
@@ -113,7 +117,7 @@
   padding: 16px 0px;
   background-color: #f1f2f4;
   border: 1px solid #d8d9db;
-  margin-top: 10px;
+  float: bottom;
 }
 
 .reservations-calendar {
