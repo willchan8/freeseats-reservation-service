@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import '../../public/styles.css';
 
+// can possible refactor PartySize to be stateless functional (might decrease page load time)
+
 class PartySize extends React.Component {
   constructor(props) {
     super(props);
@@ -31,9 +33,7 @@ class PartySize extends React.Component {
       size.push(i);
     }
 
-    const partySize = size.map((party) => {
-      return <option className="party-size-selected" key={party} value={party}>{party}</option>;
-    });
+    const partySize = size.map(party => <option className="party-size-selected" key={party} value={party}>{party}</option>);
 
     return (
       <div className="party-size-wrapper">
