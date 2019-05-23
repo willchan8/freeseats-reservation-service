@@ -21,6 +21,9 @@ const Availability = sequelize.define('restaurant',
     name: {
       type: Sequelize.STRING,
     },
+    booked: {
+      type: Sequelize.INTEGER,
+    },
     '6PM': {
       type: Sequelize.INTEGER,
     },

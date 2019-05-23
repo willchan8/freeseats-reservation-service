@@ -7,9 +7,15 @@ const seats = () => faker.random.number({
   max: 20,
 });
 
+const booked = () => faker.random.number({
+  min: 3,
+  max: 15,
+});
+
 Availability.sync({ force: true })
   .then(() => Availability.create({
     name: 'Kinjo',
+    booked: booked(),
     '6PM': seats(),
     '6:15PM': seats(),
     '6:30PM': seats(),
@@ -26,6 +32,7 @@ Availability.sync({ force: true })
     for (let i = 1; i < 100; i++) {
       Availability.create({
         name: faker.lorem.word(),
+        booked: booked(),
         '6PM': seats(),
         '6:15PM': seats(),
         '6:30PM': seats(),
