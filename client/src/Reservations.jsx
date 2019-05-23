@@ -8,6 +8,7 @@ import PartySize from './PartySize.jsx';
 import Time from './Time.jsx';
 import Date from './Date.jsx';
 import Calendar from './Calendar.jsx';
+import NoAvailability from './conditional_messages/NoAvailability.jsx';
 
 import '../../public/styles.css';
 
@@ -22,6 +23,9 @@ class Reservations extends React.Component {
       time: '6:00 PM',
       displayCalendar: false,
       bookings: null,
+      noAvailMsg: false,
+      findTableBtn: true,
+      showNextAvail: false,
     };
 
     this.handleSize = this.handleSize.bind(this);
@@ -30,6 +34,7 @@ class Reservations extends React.Component {
     this.handleClickCalendar = this.handleClickCalendar.bind(this);
     this.hideCalendar = this.hideCalendar.bind(this);
     this.changeDate = this.changeDate.bind(this);
+    this.checkAvailability = this.checkAvailability.bind(this);
     this.getBookings = this.getBookings.bind(this);
   }
 
@@ -75,7 +80,15 @@ class Reservations extends React.Component {
     }
   }
 
-  // checkAvailability() {}
+  checkAvailability() {
+    // grab states (partySize, clickedDate, time)
+    // if time selected is not 3:30PM to 11PM then render conditional message
+    this.setState({
+      noAvailMsg: true,
+      findTableBtn: false,
+      showNextAvail: true,
+    });
+  }
 
   getBookings() {
     axios.get('http://localhost:3020/reservations/1')
@@ -97,20 +110,34 @@ class Reservations extends React.Component {
   render() {
     return (
       <div className="reservations">
+
         <div className="reservation-title-wrapper">
           <span className="make-res-title">Make a reservation</span>
         </div>
+
         <PartySize handleSize={this.handleSize} />
+
         <div className="date-time-wrapper">
           <Date handleClick={this.handleClickCalendar} clickedDate={this.state.clickedDate} />
           <Time handleTime={this.handleTime} />
         </div>
+
         {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} /> : null}
-        <button className="find-table" >Find a Table</button>
+
+        {this.state.findTableBtn ? <button className="find-table" onClick={this.checkAvailability}>Find a Table</button> : null}
+
+        {/* conditional messages and select a time */}
+        {/* set up click event where party size, date, and time changed values brings back find table button and message go aways */}
+
+        {this.state.noAvailMsg ? <NoAvailability time={this.state.time} /> : null}
+
         <div className="bookings">
           <img src="https://s3-us-west-1.amazonaws.com/freeseats-imgs/Booking.png" height="18px" width="22px" />
           <span className="bookings-caption">Booked {this.state.bookings} times today</span>
         </div>
+
+        {this.state.showNextAvail ? <button className="show-next-avail-btn">Show next available</button> : null}
+
       </div>
     );
   }

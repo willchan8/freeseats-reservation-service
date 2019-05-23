@@ -142,6 +142,53 @@
   font-weight: 500;
 }
 
+/* CONDITIONAL MESSAGES */
+.conditional-messages {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  background-color: #f1f2f4;
+  margin: 1rem auto 0;
+}
+
+.conditional-caption {
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  display: block;
+  margin-left: 8px;
+}
+
+.exclamation-icon {
+  height: 20px;
+  width: 20px;
+}
+
+/* SHOW NEXT AVAILABLE */
+.show-next-avail-btn {
+  height: 48px;
+  padding: calc(.75rem - 1px) calc(1rem - 1px);
+  border: 1px solid #d8d9db;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 2px;
+  color: #2d333f;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin-top: 20px;
+}
+
+.show-next-avail-btn:hover {
+  border: 2px solid #da3743;
+}
+
 /* CALENDAR STYLES */
 .res-calendar-wrapper {
   position: absolute;
