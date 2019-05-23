@@ -19,7 +19,6 @@ it('renders correctly', () => {
 describe('Party Size Rendering', () => {
   const wrapper = shallow(<PartySize />);
   it('renders a select drop down list', () => {
-    // const wrapper = shallow(<PartySize />);
     const list = wrapper.find('.party-size-list');
     expect(list.length).toBe(1);
     expect(list.find('.party-size-selected').length).toBe(20);
