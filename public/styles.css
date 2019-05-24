@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+	font-family: Brandon;
+	src: url('../client/fonts/BrandonText_Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Brandon-Med;
+  src: url('../client/fonts/BrandonText_Medium.otf') format('opentype');
+}
+
 .reservations {
   padding: .5rem 1rem 1rem;
   border-bottom-left-radius: 2px;
@@ -28,7 +38,7 @@
   line-height: 24px;
   font-weight: 600;
   font-size: 20px;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   border-bottom: 1px solid #d8d9db;
   padding-bottom: 10px;
 }
@@ -52,7 +62,7 @@
 }
 
 .display-date {
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   font-size: 14px;
   background-color: #fff;
   -webkit-appearance: none;
@@ -71,13 +81,13 @@
   padding-bottom: .25rem;
   display: block;
   flex-direction: column;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
 }
 
 .party-size-list, .time-list {
   cursor: pointer;
   font-size: 14px;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   display: block;
   outline: none;
   border: none;
@@ -120,7 +130,7 @@
   font-weight: 500;
   border-radius: 2px;
   text-align: center;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   padding: 12px 16px;
   margin-top: 20px;
 }
@@ -136,7 +146,7 @@
 }
 
 .bookings-caption {
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   padding-left: 7px;
   font-size: 14px;
   font-weight: 500;
@@ -152,7 +162,7 @@
 }
 
 .conditional-caption {
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -186,7 +196,7 @@
   box-sizing: border-box;
   background-color: #fff;
   cursor: pointer;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   margin-top: 20px;
 }
 
@@ -212,10 +222,10 @@
 
 .week-day-res {
   display: table-cell;
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
   color: #2d333f;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   font-weight: 350;
   padding-bottom: 7px;
 }
@@ -225,7 +235,7 @@
   text-align: center;
   cursor: pointer;
   border: 1px solid #d8d9db;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   height: 33px;
   width: 36px;
   background-clip: padding-box;
@@ -271,7 +281,7 @@
 }
 
 .res-calendar-nav {
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   font-size: 16px;
   text-align: center;
   font-weight: 600;
