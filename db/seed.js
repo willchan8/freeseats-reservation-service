@@ -4,7 +4,7 @@ const Availability = require('./db.js');
 
 const seats = () => faker.random.number({
   min: 2,
-  max: 20,
+  max: 10,
 });
 
 const booked = () => faker.random.number({
