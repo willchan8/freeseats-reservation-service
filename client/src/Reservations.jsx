@@ -9,6 +9,7 @@ import Time from './Time.jsx';
 import Date from './Date.jsx';
 import Calendar from './Calendar.jsx';
 import NoAvailability from './conditional_messages/NoAvailability.jsx';
+import TooBig from './conditional_messages/TooBig.jsx';
 
 import '../../public/styles.css';
 
@@ -21,11 +22,13 @@ class Reservations extends React.Component {
       date: moment(),
       clickedDate: 'Today',
       time: '6:00 PM',
-      displayCalendar: false,
       bookings: null,
+      resName: null,
+      displayCalendar: false,
       noAvailMsg: false,
       findTableBtn: true,
       showNextAvail: false,
+      tooBig: false,
     };
 
     this.handleSize = this.handleSize.bind(this);
@@ -86,17 +89,31 @@ class Reservations extends React.Component {
       findTableBtn: true,
       showNextAvail: false,
       noAvailMsg: false,
+      tooBig: false,
     });
   }
 
   checkAvailability() {
-    // grab states (partySize, clickedDate, time)
-    // if time selected is not 3:30PM to 11PM then render conditional message
-    this.setState({
-      noAvailMsg: true,
-      findTableBtn: false,
-      showNextAvail: true,
-    });
+    const checkTime = this.state.time.split(' ');
+    const checkHour = checkTime[0].split(':');
+    const hour = Number(checkHour[0]);
+
+    if (checkTime[1] === 'AM' || hour <= 3 || hour >= 11) {
+      this.setState({
+        noAvailMsg: true,
+        findTableBtn: false,
+        showNextAvail: true,
+      });
+    }
+
+    if (this.state.partySize > 6) {
+      this.setState({
+        tooBig: true,
+        findTableBtn: false,
+        showNextAvail: false,
+        noAvailMsg: false,
+      });
+    }
   }
 
   getBookings() {
@@ -105,6 +122,7 @@ class Reservations extends React.Component {
         console.log(res.data);
         this.setState({
           bookings: res.data.booked,
+          resName: res.data.name,
         });
       })
       .catch((err) => {
@@ -138,6 +156,8 @@ class Reservations extends React.Component {
         {/* conditional messages and select a time */}
 
         {this.state.noAvailMsg ? <NoAvailability time={this.state.time} /> : null}
+
+        {this.state.tooBig ? <TooBig resName={this.state.resName} /> : null}
 
         <div className="bookings">
           <img src="https://s3-us-west-1.amazonaws.com/freeseats-imgs/Booking.png" height="18px" width="22px" />
