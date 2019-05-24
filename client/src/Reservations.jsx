@@ -112,7 +112,7 @@ class Reservations extends React.Component {
       this.setState({
         noAvailMsg: true,
         findTableBtn: false,
-        showNextAvail: true,
+        showNextAvail: false,
         tooBig: false,
         tooFar: false,
       });
@@ -125,7 +125,7 @@ class Reservations extends React.Component {
       this.setState({
         tooFar: true,
         findTableBtn: false,
-        showNextAvail: true,
+        showNextAvail: false,
         tooBig: false,
         noAvailMsg: false,
       });
