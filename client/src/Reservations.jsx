@@ -136,7 +136,6 @@ class Reservations extends React.Component {
         {this.state.findTableBtn ? <button className="find-table" onClick={this.checkAvailability}>Find a Table</button> : null}
 
         {/* conditional messages and select a time */}
-        {/* set up click event where party size, date, and time changed values brings back find table button and message go aways */}
 
         {this.state.noAvailMsg ? <NoAvailability time={this.state.time} /> : null}
 

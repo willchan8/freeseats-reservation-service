@@ -55,6 +55,7 @@ class Calendar extends React.Component {
       this.setState({
         clickedDay: e,
       });
+      this.props.getBtnBack();
       this.props.hideCalendar();
     }
   }

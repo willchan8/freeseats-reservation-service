@@ -14,6 +14,7 @@ class PartySize extends React.Component {
     };
 
     this.handleSizeChange = this.handleSizeChange.bind(this);
+    this.onChangeFuncs = this.onChangeFuncs.bind(this);
   }
 
   handleSizeChange(e) {
@@ -27,6 +28,11 @@ class PartySize extends React.Component {
     // return 'For ' + e.target.value;
   }
 
+  onChangeFuncs(e) {
+    this.handleSizeChange(e);
+    this.props.getBtnBack();
+  }
+
   render() {
     const size = [];
     for (let i = 1; i <= 20; i++) {
@@ -38,7 +44,7 @@ class PartySize extends React.Component {
     return (
       <div className="party-size-wrapper">
         <div className="party-size-title">Party Size</div>
-        <select className="party-size-list" defaultValue="2" onChange={this.handleSizeChange}>
+        <select className="party-size-list" defaultValue="2" onChange={(e) => { this.onChangeFuncs(e); }}>
           {partySize}
         </select>
       </div>
