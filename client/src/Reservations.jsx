@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 
 import PartySize from './PartySize.jsx';
 import Time from './Time.jsx';
-import Date from './Date.jsx';
+import DateSection from './DateSection.jsx';
 import Calendar from './Calendar.jsx';
 import NoAvailability from './conditional_messages/NoAvailability.jsx';
 import TooBig from './conditional_messages/TooBig.jsx';
+import TooFar from './conditional_messages/TooFar.jsx';
 
 import '../../public/styles.css';
 
@@ -29,6 +30,7 @@ class Reservations extends React.Component {
       findTableBtn: true,
       showNextAvail: false,
       tooBig: false,
+      tooFar: false,
     };
 
     this.handleSize = this.handleSize.bind(this);
@@ -90,8 +92,16 @@ class Reservations extends React.Component {
       showNextAvail: false,
       noAvailMsg: false,
       tooBig: false,
+      tooFar: false,
     });
   }
+
+  // make sure to toggle between all displays for conditionals in getBtnBack and checkAvail funcs!!
+  // noAvailMsg: false,
+  // findTableBtn: true,
+  // showNextAvail: false,
+  // tooBig: false,
+  // tooFar: false,
 
   checkAvailability() {
     const checkTime = this.state.time.split(' ');
@@ -103,6 +113,21 @@ class Reservations extends React.Component {
         noAvailMsg: true,
         findTableBtn: false,
         showNextAvail: true,
+        tooBig: false,
+        tooFar: false,
+      });
+    }
+
+    const future = this.state.date;
+    const today = new Date();
+
+    if (dateFns.differenceInCalendarDays(future, today) > 90) {
+      this.setState({
+        tooFar: true,
+        findTableBtn: false,
+        showNextAvail: true,
+        tooBig: false,
+        noAvailMsg: false,
       });
     }
 
@@ -112,6 +137,7 @@ class Reservations extends React.Component {
         findTableBtn: false,
         showNextAvail: false,
         noAvailMsg: false,
+        tooFar: false,
       });
     }
   }
@@ -145,7 +171,7 @@ class Reservations extends React.Component {
         <PartySize handleSize={this.handleSize} getBtnBack={this.getBtnBack} />
 
         <div className="date-time-wrapper">
-          <Date handleClick={this.handleClickCalendar} clickedDate={this.state.clickedDate} />
+          <DateSection handleClick={this.handleClickCalendar} clickedDate={this.state.clickedDate} />
           <Time handleTime={this.handleTime} getBtnBack={this.getBtnBack} />
         </div>
 
@@ -158,6 +184,8 @@ class Reservations extends React.Component {
         {this.state.noAvailMsg ? <NoAvailability time={this.state.time} /> : null}
 
         {this.state.tooBig ? <TooBig resName={this.state.resName} /> : null}
+
+        {this.state.tooFar ? <TooFar resName={this.state.resName} /> : null}
 
         <div className="bookings">
           <img src="https://s3-us-west-1.amazonaws.com/freeseats-imgs/Booking.png" height="18px" width="22px" />
