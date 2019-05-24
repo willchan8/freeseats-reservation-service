@@ -98,7 +98,7 @@ class Reservations extends React.Component {
     const checkHour = checkTime[0].split(':');
     const hour = Number(checkHour[0]);
 
-    if (checkTime[1] === 'AM' || hour <= 3 || hour >= 11) {
+    if (checkTime[1] === 'AM' || hour < 3 || this.state.time === '3:00 PM' || this.state.time === '11:30 PM') {
       this.setState({
         noAvailMsg: true,
         findTableBtn: false,
