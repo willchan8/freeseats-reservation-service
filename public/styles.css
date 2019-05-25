@@ -204,6 +204,56 @@
   border: 2px solid #da3743;
 }
 
+/* AVAILABLE TIMES */
+.availTimes-wrapper {
+  display: flex;
+  margin: 1rem auto 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.availTimes-caption-wrapper {
+  margin: 0 0 .5rem;
+}
+
+.availTimes-caption {
+  margin: 0 0 .5rem;
+  font-family: Brandon-Med;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.times-wrapper {
+  margin-right: .5rem;
+  display: block;
+}
+
+.avail-time {
+  display: inline-block;
+  min-width: 72px;
+  height: 32px;
+  background-color: #da3743;
+  border-radius: 2px;
+  align-items: center;
+  padding: .25rem;
+  font-family: Brandon;
+  cursor: pointer;
+  justify-content: center;
+  margin: 0 .5rem .5rem 0;
+}
+
+.avail-time:hover {
+  opacity: 0.7;
+}
+
+.avail-time-caption {
+  font-size: .875rem;
+  text-align: center;
+  color: #fff;
+  margin-left: .5rem;
+}
+
 /* CALENDAR STYLES */
 .res-calendar-wrapper {
   position: absolute;

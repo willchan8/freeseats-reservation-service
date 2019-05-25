@@ -22,7 +22,10 @@
     "no-path-concat": 0,
     "no-consistent-return": 0,
     "no-prefer-template": 0,
-    "global-require": 0
+    "global-require": 0,
+    "no-restricted-syntax": [
+      "ForInStatement"
+    ]
   },
   "extends": [
     "eslint:recommended",

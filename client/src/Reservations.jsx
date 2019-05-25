@@ -11,6 +11,7 @@ import Calendar from './Calendar.jsx';
 import NoAvailability from './conditional_messages/NoAvailability.jsx';
 import TooBig from './conditional_messages/TooBig.jsx';
 import TooFar from './conditional_messages/TooFar.jsx';
+import AvailTimes from './conditional_messages/AvailTimes.jsx';
 
 import '../../public/styles.css';
 
@@ -23,6 +24,8 @@ class Reservations extends React.Component {
       date: moment(),
       clickedDate: 'Today',
       time: '6:00 PM',
+      availTimeSlots: [],
+      allData: null,
       bookings: null,
       resName: null,
       displayCalendar: false,
@@ -31,6 +34,7 @@ class Reservations extends React.Component {
       showNextAvail: false,
       tooBig: false,
       tooFar: false,
+      availTimes: false,
     };
 
     this.handleSize = this.handleSize.bind(this);
@@ -42,6 +46,7 @@ class Reservations extends React.Component {
     this.checkAvailability = this.checkAvailability.bind(this);
     this.getBookings = this.getBookings.bind(this);
     this.getBtnBack = this.getBtnBack.bind(this);
+    this.noAvailability = this.noAvailability.bind(this);
   }
 
   handleSize(e) {
@@ -93,29 +98,88 @@ class Reservations extends React.Component {
       noAvailMsg: false,
       tooBig: false,
       tooFar: false,
+      availTimes: false,
     });
   }
 
-  // make sure to toggle between all displays for conditionals in getBtnBack and checkAvail funcs!!
-  // noAvailMsg: false,
-  // findTableBtn: true,
-  // showNextAvail: false,
-  // tooBig: false,
-  // tooFar: false,
+  noAvailability() {
+    this.setState({
+      noAvailMsg: true,
+      findTableBtn: false,
+      showNextAvail: false,
+      tooBig: false,
+      tooFar: false,
+      availTimes: false,
+    });
+  }
 
   checkAvailability() {
+    const timeSlots = [];
+
+    delete this.state.allData.id;
+    delete this.state.allData.booked;
+    delete this.state.allData.name;
+
     const checkTime = this.state.time.split(' ');
     const checkHour = checkTime[0].split(':');
     const hour = Number(checkHour[0]);
 
-    if (checkTime[1] === 'AM' || hour < 3 || this.state.time === '3:00 PM' || this.state.time === '11:30 PM') {
-      this.setState({
-        noAvailMsg: true,
-        findTableBtn: false,
-        showNextAvail: false,
-        tooBig: false,
-        tooFar: false,
-      });
+    for (const key in this.state.allData) {
+      if (this.state.allData[key] >= this.state.partySize) {
+        timeSlots.push(key);
+      }
+    }
+
+    if (this.state.time === '3:30 PM') {
+      if (timeSlots.includes('6:00 PM')) {
+        this.setState({
+          availTimeSlots: ['6:00 PM'],
+          noAvailMsg: false,
+          findTableBtn: false,
+          showNextAvail: false,
+          tooBig: false,
+          tooFar: false,
+          availTimes: true,
+        });
+      } else {
+        this.noAvailability();
+      }
+    }
+
+    if (hour >= 4 && hour <= 10) {
+      if (timeSlots.length !== 0) {
+        this.setState({
+          availTimeSlots: timeSlots,
+          noAvailMsg: false,
+          findTableBtn: false,
+          showNextAvail: false,
+          tooBig: false,
+          tooFar: false,
+          availTimes: true,
+        });
+      } else {
+        this.noAvailability();
+      }
+    }
+
+    if (this.state.time === '11:00 PM') {
+      if (timeSlots.includes('8:30 PM')) {
+        this.setState({
+          availTimeSlots: ['8:30 PM'],
+          noAvailMsg: false,
+          findTableBtn: false,
+          showNextAvail: false,
+          tooBig: false,
+          tooFar: false,
+          availTimes: true,
+        });
+      } else {
+        this.noAvailability();
+      }
+    }
+
+    if (checkTime[1] === 'AM' || hour < 3 || this.state.time === '3:00 PM' || this.state.time === '11:30 PM' || hour === 12) {
+      this.noAvailability();
     }
 
     const future = this.state.date;
@@ -128,6 +192,7 @@ class Reservations extends React.Component {
         showNextAvail: false,
         tooBig: false,
         noAvailMsg: false,
+        availTimes: false,
       });
     }
 
@@ -138,6 +203,7 @@ class Reservations extends React.Component {
         showNextAvail: false,
         noAvailMsg: false,
         tooFar: false,
+        availTimes: false,
       });
     }
   }
@@ -145,10 +211,10 @@ class Reservations extends React.Component {
   getBookings() {
     axios.get('http://localhost:3020/reservations/1')
       .then((res) => {
-        console.log(res.data);
         this.setState({
           bookings: res.data.booked,
           resName: res.data.name,
+          allData: res.data,
         });
       })
       .catch((err) => {
@@ -179,7 +245,7 @@ class Reservations extends React.Component {
 
         {this.state.findTableBtn ? <button className="find-table" onClick={this.checkAvailability}>Find a Table</button> : null}
 
-        {/* conditional messages and select a time */}
+        {this.state.availTimes ? <AvailTimes availTimeSlots={this.state.availTimeSlots} time={this.state.time} /> : null}
 
         {this.state.noAvailMsg ? <NoAvailability time={this.state.time} /> : null}
 
