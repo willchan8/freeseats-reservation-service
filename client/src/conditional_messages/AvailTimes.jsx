@@ -28,12 +28,10 @@ const AvailTimes = (props) => {
   } else if (hour === 5) {
     const timesFor5 = [];
 
-    while (timesFor5.length < 5) {
-      for (let i = 0; i < timeSlots.length; i++) {
-        const hour = Number(timeSlots[i].split(' ')[0].split(':')[0]);
-        if (hour === 6 || hour === 7) {
-          timesFor5.push(timeSlots[i]);
-        }
+    for (let i = 0; i < timeSlots.length; i++) {
+      const hour = Number(timeSlots[i].split(' ')[0].split(':')[0]);
+      if (hour === 6 || hour === 7) {
+        timesFor5.push(timeSlots[i]);
       }
     }
 
