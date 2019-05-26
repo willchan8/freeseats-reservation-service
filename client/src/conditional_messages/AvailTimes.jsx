@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dateFns from 'date-fns';
 
 import '../../../public/styles.css';
 
@@ -9,6 +10,27 @@ const AvailTimes = (props) => {
   const hour = Number(checkHour[0]);
   const timeSlots = props.availTimeSlots;
   let times;
+  const currentHour = Number(dateFns.format(new Date(), 'H'));
+
+  console.log(props.time);
+
+  if (dateFns.format(props.selectedDate, 'M/D/YY') === dateFns.format(new Date(), 'M/D/YY')) {
+    const todayTimes = [];
+    if (currentHour > hour) {
+      for (let i = 0; i < timeSlots.length; i++) {
+        const formattedH = Number(timeSlots[i].split(' ')[0].split(':')[0]);
+        if (formattedH === hour) {
+          todayTimes.push(timeSlots[i]);
+        }
+      }
+
+      times = todayTimes.map(time => {
+        return <div className="avail-time" key={time} >
+          <span className="avail-time-caption">{time}</span>
+        </div>;
+      });
+    }
+  }
 
   if (hour === 4) {
     const timesFor4 = [];
@@ -96,6 +118,7 @@ const AvailTimes = (props) => {
 AvailTimes.propTypes = {
   availTimeSlots: PropTypes.array,
   time: PropTypes.string,
+  selectedDate: PropTypes.any.isRequired,
 };
 
 export default AvailTimes;

@@ -17,10 +17,27 @@ class Time extends React.Component {
   }
 
   handleTimeChange(e) {
-    this.props.handleTime(e);
-    this.setState({
-      time: e.target.value,
-    });
+    const timeSplit = (e.target.value).split(':');
+    let convertTime;
+    if (timeSplit[0] === '00') {
+      convertTime = '12:' + timeSplit[1];
+      this.props.handleTime(convertTime);
+      this.setState({
+        time: convertTime,
+      });
+    } else if (Number(timeSplit[0]) > 12) {
+      let hour = Math.abs(12 - Number(timeSplit[0])).toString();
+      convertTime = hour + ':' + timeSplit[1];
+      this.props.handleTime(convertTime);
+      this.setState({
+        time: convertTime,
+      });
+    } else {
+      this.props.handleTime(e.target.value);
+      this.setState({
+        time: e.target.value,
+      });
+    }
   }
 
   onChangeFuncs(e) {

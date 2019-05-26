@@ -57,7 +57,7 @@ class Reservations extends React.Component {
 
   handleTime(e) {
     this.setState({
-      time: e.target.value,
+      time: e,
     });
   }
 
@@ -245,7 +245,7 @@ class Reservations extends React.Component {
 
         {this.state.findTableBtn ? <button className="find-table" onClick={this.checkAvailability}>Find a Table</button> : null}
 
-        {this.state.availTimes ? <AvailTimes availTimeSlots={this.state.availTimeSlots} time={this.state.time} /> : null}
+        {this.state.availTimes ? <AvailTimes availTimeSlots={this.state.availTimeSlots} time={this.state.time} selectedDate={this.state.date} /> : null}
 
         {this.state.noAvailMsg ? <NoAvailability time={this.state.time} /> : null}
 
