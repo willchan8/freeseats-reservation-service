@@ -238,7 +238,7 @@ class Reservations extends React.Component {
 
         <div className="date-time-wrapper">
           <DateSection handleClick={this.handleClickCalendar} clickedDate={this.state.clickedDate} />
-          <Time handleTime={this.handleTime} getBtnBack={this.getBtnBack} />
+          <Time handleTime={this.handleTime} getBtnBack={this.getBtnBack} selectedDate={this.state.date} />
         </div>
 
         {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} getBtnBack={this.getBtnBack} selectedDate={this.state.date} /> : null}

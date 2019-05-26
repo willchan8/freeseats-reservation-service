@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import dateFns from 'date-fns';
 
 class Time extends React.Component {
   constructor(props) {
@@ -27,24 +28,105 @@ class Time extends React.Component {
     this.props.getBtnBack();
   }
 
-  // check current time if today's date is selected from date component (need to pass down state from parent)
-  // if true then render only times that are after current time
-
   render() {
     const times = [];
+    const currentHour = dateFns.format(new Date(), 'H');
+    const currentMin = dateFns.format(new Date(), 'm');
 
-    for (let hour = 0; hour < 24; hour++) {
-      times.push(moment({ hour }).format('h:mm A'));
-      times.push(moment({ hour, minute: 30 }).format('h:mm A'));
+    if (dateFns.format(this.props.selectedDate, 'M/D/YY') === dateFns.format(new Date(), 'M/D/YY')) {
+      for (let i = currentHour; i < 24; i++) {
+        if (i === 0) {
+          times.push(
+            <option key={i} value={`${i}0:00 AM`}>
+              {i + 12}:00 AM
+            </option>,
+            <option key={`${i}:30`} value={`${i}0:30 AM`}>
+              {i + 12}:30 AM
+            </option>
+          );
+        } else if (i > 0) {
+          if (i > 12) {
+            times.push(
+              <option key={i} value={`${i}:00 PM`}>
+                {i - 12}:00 PM
+              </option>,
+              <option key={`${i}:30`} value={`${i}:30 PM`}>
+                {i - 12}:30 PM
+              </option>
+            );
+          } else if (i < 12) {
+            times.push(
+              <option key={i} value={`${i}:00 AM`}>
+                {i}:00 AM
+              </option>,
+              <option key={`${i}:30`} value={`${i}:30 AM`}>
+                {i}:30 AM
+              </option>
+            );
+          } else if (i === 12) {
+            times.push(
+              <option key={i} value={`${i}:00 PM`}>
+                {i}:00 PM
+              </option>,
+              <option key={`${i}:30`} value={`${i}:30 PM`}>
+                {i}:30 PM
+              </option>
+            );
+          }
+        }
+      }
+      if (currentMin >= 30) {
+        times.splice(0, 1);
+      }
+    } else {
+      for (let i = 0; i < 24; i++) {
+        if (i === 0) {
+          times.push(
+            <option key={i} value={`${i}0:00 AM`}>
+              {i + 12}:00 AM
+						</option>,
+            <option key={`${i}:30`} value={`${i}0:30 AM`}>
+              {i + 12}:30 AM
+						</option>
+          );
+        } else if (i > 0) {
+          if (i > 12) {
+            times.push(
+              <option key={i} value={`${i}:00 PM`}>
+                {i - 12}:00 PM
+							</option>,
+              <option key={`${i}:30`} value={`${i}:30 PM`}>
+                {i - 12}:30 PM
+							</option>
+            );
+          } else if (i < 12) {
+            times.push(
+              <option key={i} value={`${i}:00 AM`}>
+                {i}:00 AM
+							</option>,
+              <option key={`${i}:30`} value={`${i}:30 AM`}>
+                {i}:30 AM
+							</option>
+            );
+          } else if (i === 12) {
+            times.push(
+              <option key={i} value={`${i}:00 PM`}>
+                {i}:00 PM
+							</option>,
+              <option key={`${i}:30`} value={`${i}:30 PM`}>
+                {i}:30 PM
+							</option>
+            );
+          }
+        }
+      }
     }
-
-    const timeOptions = times.map(time => <option className="time-selected" key={time} value={time}>{time}</option>);
 
     return (
       <div className="time-wrapper">
         <div className="time-title">Time</div>
         <select className="time-list" defaultValue="6:00 PM" onChange={(e) => { this.onChangeFuncs(e); }}>
-          {timeOptions}
+          {times}
         </select>
       </div>
     );
@@ -54,6 +136,7 @@ class Time extends React.Component {
 Time.propTypes = {
   handleTime: PropTypes.func,
   getBtnBack: PropTypes.func,
+  selectedDate: PropTypes.any.isRequired,
 };
 
 export default Time;

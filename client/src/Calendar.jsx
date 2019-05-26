@@ -46,25 +46,12 @@ class Calendar extends React.Component {
   }
 
   changeDayClick(e) {
-    // change red hover to day clicked
-    // when calendar is clicked, show calendar with clicked date with red border instead of today's date
-
     if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
       this.props.handleDate(e);
       this.props.changeDate(e);
       this.props.getBtnBack();
       this.props.hideCalendar();
     }
-
-    // if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
-    //   if (dateFns.format(e, 'M/D') === dateFns.format(this.props.selectedDate, 'M/D')) {
-
-    //   }
-    //   this.props.handleDate(e);
-    //   this.props.changeDate(e);
-    //   this.props.getBtnBack();
-    //   this.props.hideCalendar();
-    // }
   }
 
   prevMonthClick() {
@@ -109,13 +96,8 @@ class Calendar extends React.Component {
     while (rowCount < 6) {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
-        // formattedDate = day;
         const cloneDay = day;
         let currentDay = '';
-
-        // if (dateFns.format(this.state.currentMonth, 'MMMM') === dateFns.format(new Date(), 'MMMM')) {
-        //   currentDay = formattedDate === this.currentDay() ? 'today' : '';
-        // }
 
         // conditional styling for dates older than today's date
         let pastCurrentDay = '';
@@ -191,7 +173,7 @@ class Calendar extends React.Component {
     }
 
     return (
-      <div className="res-calendar-wrapper" ref={this.setWrapperRef}  >
+      <div onClick={this.childClickHandler} className="res-calendar-wrapper" ref={this.setWrapperRef}  >
 
         <div className="res-month-title">
           <div className="col-start">
