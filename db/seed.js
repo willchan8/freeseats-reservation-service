@@ -4,39 +4,46 @@ const Availability = require('./db.js');
 
 const seats = () => faker.random.number({
   min: 2,
-  max: 20,
+  max: 10,
+});
+
+const booked = () => faker.random.number({
+  min: 3,
+  max: 15,
 });
 
 Availability.sync({ force: true })
   .then(() => Availability.create({
     name: 'Kinjo',
-    '6PM': seats(),
-    '6:15PM': seats(),
-    '6:30PM': seats(),
-    '6:45PM': seats(),
-    '7PM': seats(),
-    '7:15PM': seats(),
-    '7:30PM': seats(),
-    '7:45PM': seats(),
-    '8PM': seats(),
-    '8:15PM': seats(),
-    '8:30PM': seats(),
+    booked: booked(),
+    '6:00 PM': seats(),
+    '6:15 PM': seats(),
+    '6:30 PM': seats(),
+    '6:45 PM': seats(),
+    '7:00 PM': seats(),
+    '7:15 PM': seats(),
+    '7:30 PM': seats(),
+    '7:45 PM': seats(),
+    '8:00 PM': seats(),
+    '8:15 PM': seats(),
+    '8:30 PM': seats(),
   }))
   .then(() => {
     for (let i = 1; i < 100; i++) {
       Availability.create({
         name: faker.lorem.word(),
-        '6PM': seats(),
-        '6:15PM': seats(),
-        '6:30PM': seats(),
-        '6:45PM': seats(),
-        '7PM': seats(),
-        '7:15PM': seats(),
-        '7:30PM': seats(),
-        '7:45PM': seats(),
-        '8PM': seats(),
-        '8:15PM': seats(),
-        '8:30PM': seats(),
+        booked: booked(),
+        '6:00 PM': seats(),
+        '6:15 PM': seats(),
+        '6:30 PM': seats(),
+        '6:45 PM': seats(),
+        '7:00 PM': seats(),
+        '7:15 PM': seats(),
+        '7:30 PM': seats(),
+        '7:45 PM': seats(),
+        '8:00 PM': seats(),
+        '8:15 PM': seats(),
+        '8:30 PM': seats(),
       });
     }
     console.log('seeded 100 restaurants');

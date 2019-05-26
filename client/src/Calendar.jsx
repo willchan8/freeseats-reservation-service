@@ -46,15 +46,10 @@ class Calendar extends React.Component {
   }
 
   changeDayClick(e) {
-    // change red hover to day clicked
-    // when calendar is clicked, show calendar with clicked date with red border instead of today's date
-
     if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
       this.props.handleDate(e);
       this.props.changeDate(e);
-      this.setState({
-        clickedDay: e,
-      });
+      this.props.getBtnBack();
       this.props.hideCalendar();
     }
   }
@@ -104,10 +99,6 @@ class Calendar extends React.Component {
         const cloneDay = day;
         let currentDay = '';
 
-        if (dateFns.format(this.state.currentMonth, 'MMMM') === dateFns.format(new Date(), 'MMMM')) {
-          currentDay = formattedDate === this.currentDay() ? 'today' : '';
-        }
-
         // conditional styling for dates older than today's date
         let pastCurrentDay = '';
         if (dateFns.compareAsc(day, dateFns.subDays(new Date(), 1)) === -1) {
@@ -132,7 +123,23 @@ class Calendar extends React.Component {
           nextMonthStyle = 'nextMonthStyle';
         }
 
-        const classes = `${prevMonthStyle} ${nextMonthStyle} ${pastCurrentDay} calendar-day-res${currentDay}`;
+        // hover date styling
+        let hoverDates = '';
+        if (pastCurrentDay) {
+          prevMonthStyle = '';
+        } else {
+          hoverDates = 'hoverDates';
+        }
+
+        if (!pastCurrentDay && !prevMonthStyle && !nextMonthStyle) {
+          currentDay = dateFns.format(day, 'M/D/YY') === dateFns.format(this.props.selectedDate, 'M/D/YY') ? 'selectedDay' : '';
+        }
+
+        if (currentDay === 'selectedDay') {
+          hoverDates = '';
+        }
+
+        const classes = `${prevMonthStyle} ${nextMonthStyle} ${pastCurrentDay} ${hoverDates} calendar-day-res ${currentDay}`;
 
         days.push(
           <td key={i} onClick={() => this.changeDayClick(dateFns.parse(cloneDay))} className={classes}>
@@ -166,7 +173,7 @@ class Calendar extends React.Component {
     }
 
     return (
-      <div className="res-calendar-wrapper" ref={this.setWrapperRef} >
+      <div onClick={this.childClickHandler} className="res-calendar-wrapper" ref={this.setWrapperRef}  >
 
         <div className="res-month-title">
           <div className="col-start">
@@ -200,6 +207,8 @@ Calendar.propTypes = {
   handleDate: PropTypes.func,
   hideCalendar: PropTypes.func,
   changeDate: PropTypes.func,
+  getBtnBack: PropTypes.func,
+  selectedDate: PropTypes.any.isRequired,
 };
 
 export default Calendar;

@@ -228,25 +228,25 @@ exports[`renders correctly 1`] = `
           21
         </td>
         <td
-          className="   calendar-day-restoday"
+          className="  pastCurrentDay calendar-day-res"
           onClick={[Function]}
         >
           22
         </td>
         <td
-          className="   calendar-day-res"
+          className="  pastCurrentDay calendar-day-res"
           onClick={[Function]}
         >
           23
         </td>
         <td
-          className="   calendar-day-res"
+          className="  pastCurrentDay calendar-day-res"
           onClick={[Function]}
         >
           24
         </td>
         <td
-          className="   calendar-day-res"
+          className="   calendar-day-restoday"
           onClick={[Function]}
         >
           25

@@ -21,37 +21,40 @@ const Availability = sequelize.define('restaurant',
     name: {
       type: Sequelize.STRING,
     },
-    '6PM': {
+    booked: {
       type: Sequelize.INTEGER,
     },
-    '6:15PM': {
+    '6:00 PM': {
       type: Sequelize.INTEGER,
     },
-    '6:30PM': {
+    '6:15 PM': {
       type: Sequelize.INTEGER,
     },
-    '6:45PM': {
+    '6:30 PM': {
       type: Sequelize.INTEGER,
     },
-    '7PM': {
+    '6:45 PM': {
       type: Sequelize.INTEGER,
     },
-    '7:15PM': {
+    '7:00 PM': {
       type: Sequelize.INTEGER,
     },
-    '7:30PM': {
+    '7:15 PM': {
       type: Sequelize.INTEGER,
     },
-    '7:45PM': {
+    '7:30 PM': {
       type: Sequelize.INTEGER,
     },
-    '8PM': {
+    '7:45 PM': {
       type: Sequelize.INTEGER,
     },
-    '8:15PM': {
+    '8:00 PM': {
       type: Sequelize.INTEGER,
     },
-    '8:30PM': {
+    '8:15 PM': {
+      type: Sequelize.INTEGER,
+    },
+    '8:30 PM': {
       type: Sequelize.INTEGER,
     },
   },

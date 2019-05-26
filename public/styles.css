@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+	font-family: Brandon;
+	src: url('../client/fonts/BrandonText_Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Brandon-Med;
+  src: url('../client/fonts/BrandonText_Medium.otf') format('opentype');
+}
+
 .reservations {
   padding: .5rem 1rem 1rem;
   border-bottom-left-radius: 2px;
@@ -28,7 +38,7 @@
   line-height: 24px;
   font-weight: 600;
   font-size: 20px;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   border-bottom: 1px solid #d8d9db;
   padding-bottom: 10px;
 }
@@ -52,7 +62,7 @@
 }
 
 .display-date {
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   font-size: 14px;
   background-color: #fff;
   -webkit-appearance: none;
@@ -71,13 +81,13 @@
   padding-bottom: .25rem;
   display: block;
   flex-direction: column;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
 }
 
 .party-size-list, .time-list {
   cursor: pointer;
   font-size: 14px;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   display: block;
   outline: none;
   border: none;
@@ -107,17 +117,151 @@
   border-bottom: 1px solid #d8d9db;
 }
 
+/* FIND A TABLE BUTTON */
+.find-table {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #da3743;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 2px;
+  text-align: center;
+  font-family: Brandon-Med;
+  padding: 12px 16px;
+  margin-top: 20px;
+}
+
+.find-table:hover {
+  opacity: 0.8;
+}
+
+/* BOOKINGS */
+.bookings {
+  padding-top: 20px;
+  display: flex;
+}
+
+.bookings-caption {
+  font-family: Brandon-Med;
+  padding-left: 7px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* CONDITIONAL MESSAGES */
+.conditional-messages {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  background-color: #f1f2f4;
+  margin: 1rem auto 0;
+}
+
+.conditional-caption {
+  font-family: Brandon;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  display: block;
+  margin-left: 8px;
+}
+
+.exclamation-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.icon-wrapper {
+  height: 24px;
+  width: 24px;
+}
+
+/* SHOW NEXT AVAILABLE */
+.show-next-avail-btn {
+  height: 48px;
+  padding: calc(.75rem - 1px) calc(1rem - 1px);
+  border: 1px solid #d8d9db;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 2px;
+  color: #2d333f;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: Brandon-Med;
+  margin-top: 20px;
+}
+
+.show-next-avail-btn:hover {
+  border: 2px solid #da3743;
+}
+
+/* AVAILABLE TIMES */
+.availTimes-wrapper {
+  display: flex;
+  margin: 1rem auto 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.availTimes-caption-wrapper {
+  margin: 0 0 .5rem;
+}
+
+.availTimes-caption {
+  margin: 0 0 .5rem;
+  font-family: Brandon-Med;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.times-wrapper {
+  margin-right: .5rem;
+  display: block;
+}
+
+.avail-time {
+  display: inline-block;
+  min-width: 72px;
+  height: 32px;
+  background-color: #da3743;
+  border-radius: 2px;
+  align-items: center;
+  padding: .25rem;
+  font-family: Brandon;
+  cursor: pointer;
+  justify-content: center;
+  margin: 0 .5rem .5rem 0;
+}
+
+.avail-time:hover {
+  opacity: 0.7;
+}
+
+.avail-time-caption {
+  font-size: .875rem;
+  text-align: center;
+  color: #fff;
+  margin-left: .25rem;
+}
+
 /* CALENDAR STYLES */
 .res-calendar-wrapper {
-  height: 288px;
-  width: 302px;
+  position: absolute;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 0px 1px;
-  padding: 16px 0px;
+  padding: 20px 0px;
   background-color: #f1f2f4;
   border: 1px solid #d8d9db;
-  float: bottom;
 }
 
 .reservations-calendar {
@@ -128,10 +272,10 @@
 
 .week-day-res {
   display: table-cell;
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
   color: #2d333f;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon;
   font-weight: 350;
   padding-bottom: 7px;
 }
@@ -141,7 +285,7 @@
   text-align: center;
   cursor: pointer;
   border: 1px solid #d8d9db;
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   height: 33px;
   width: 36px;
   background-clip: padding-box;
@@ -170,7 +314,7 @@
   z-index: -1;
 }
 
-.calendar-day-restoday {
+.selectedDay {
   border: 2px solid #da3743;
 }
 
@@ -187,7 +331,7 @@
 }
 
 .res-calendar-nav {
-  font-family: "BrandonText", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Brandon-Med;
   font-size: 16px;
   text-align: center;
   font-weight: 600;

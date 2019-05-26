@@ -10,8 +10,10 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-app.get('/reservations', (req, res) => {
-  Availability.findOne({ where: { name: 'Kinjo' } })
+app.get('/reservations/:id', (req, res) => {
+  const resID = Number(req.params.id);
+
+  Availability.findOne({ where: { id: resID } })
     .then((main) => {
       res.status(200).send(main);
     })
