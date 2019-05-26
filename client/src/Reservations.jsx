@@ -21,7 +21,7 @@ class Reservations extends React.Component {
 
     this.state = {
       partySize: 2,
-      date: moment(),
+      date: new Date(),
       clickedDate: 'Today',
       time: '6:00 PM',
       availTimeSlots: [],
@@ -241,7 +241,7 @@ class Reservations extends React.Component {
           <Time handleTime={this.handleTime} getBtnBack={this.getBtnBack} />
         </div>
 
-        {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} getBtnBack={this.getBtnBack} /> : null}
+        {this.state.displayCalendar ? <Calendar hideCalendar={this.hideCalendar} handleDate={this.handleDate} changeDate={this.changeDate} getBtnBack={this.getBtnBack} selectedDate={this.state.date} /> : null}
 
         {this.state.findTableBtn ? <button className="find-table" onClick={this.checkAvailability}>Find a Table</button> : null}
 

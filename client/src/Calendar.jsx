@@ -52,12 +52,19 @@ class Calendar extends React.Component {
     if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
       this.props.handleDate(e);
       this.props.changeDate(e);
-      this.setState({
-        clickedDay: e,
-      });
       this.props.getBtnBack();
       this.props.hideCalendar();
     }
+
+    // if (dateFns.compareAsc(e, dateFns.subDays(new Date(), 1)) === 1) {
+    //   if (dateFns.format(e, 'M/D') === dateFns.format(this.props.selectedDate, 'M/D')) {
+
+    //   }
+    //   this.props.handleDate(e);
+    //   this.props.changeDate(e);
+    //   this.props.getBtnBack();
+    //   this.props.hideCalendar();
+    // }
   }
 
   prevMonthClick() {
@@ -102,12 +109,13 @@ class Calendar extends React.Component {
     while (rowCount < 6) {
       for (let i = 0; i < 7; i++) {
         formattedDate = dateFns.format(day, dateFormat);
+        // formattedDate = day;
         const cloneDay = day;
         let currentDay = '';
 
-        if (dateFns.format(this.state.currentMonth, 'MMMM') === dateFns.format(new Date(), 'MMMM')) {
-          currentDay = formattedDate === this.currentDay() ? 'today' : '';
-        }
+        // if (dateFns.format(this.state.currentMonth, 'MMMM') === dateFns.format(new Date(), 'MMMM')) {
+        //   currentDay = formattedDate === this.currentDay() ? 'today' : '';
+        // }
 
         // conditional styling for dates older than today's date
         let pastCurrentDay = '';
@@ -133,7 +141,23 @@ class Calendar extends React.Component {
           nextMonthStyle = 'nextMonthStyle';
         }
 
-        const classes = `${prevMonthStyle} ${nextMonthStyle} ${pastCurrentDay} calendar-day-res${currentDay}`;
+        // hover date styling
+        let hoverDates = '';
+        if (pastCurrentDay) {
+          prevMonthStyle = '';
+        } else {
+          hoverDates = 'hoverDates';
+        }
+
+        if (!pastCurrentDay && !prevMonthStyle && !nextMonthStyle) {
+          currentDay = dateFns.format(day, 'M/D/YY') === dateFns.format(this.props.selectedDate, 'M/D/YY') ? 'selectedDay' : '';
+        }
+
+        if (currentDay === 'selectedDay') {
+          hoverDates = '';
+        }
+
+        const classes = `${prevMonthStyle} ${nextMonthStyle} ${pastCurrentDay} ${hoverDates} calendar-day-res ${currentDay}`;
 
         days.push(
           <td key={i} onClick={() => this.changeDayClick(dateFns.parse(cloneDay))} className={classes}>
@@ -167,7 +191,7 @@ class Calendar extends React.Component {
     }
 
     return (
-      <div className="res-calendar-wrapper" ref={this.setWrapperRef} >
+      <div className="res-calendar-wrapper" ref={this.setWrapperRef}  >
 
         <div className="res-month-title">
           <div className="col-start">
@@ -202,6 +226,7 @@ Calendar.propTypes = {
   hideCalendar: PropTypes.func,
   changeDate: PropTypes.func,
   getBtnBack: PropTypes.func,
+  selectedDate: PropTypes.any.isRequired,
 };
 
 export default Calendar;

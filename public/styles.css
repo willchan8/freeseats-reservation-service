@@ -314,7 +314,7 @@
   z-index: -1;
 }
 
-.calendar-day-restoday {
+.selectedDay {
   border: 2px solid #da3743;
 }
 
