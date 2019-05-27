@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import dateFns from 'date-fns';
 
 class Time extends React.Component {
@@ -9,7 +8,7 @@ class Time extends React.Component {
 
     this.state = {
       time: '6:00 PM',
-      current: moment(),
+      current: new Date(),
     };
 
     this.handleTimeChange = this.handleTimeChange.bind(this);
@@ -92,8 +91,8 @@ class Time extends React.Component {
           }
         }
       }
-      if (currentMin >= 30) {
-        times.splice(0, 1);
+      if (currentMin > 30) {
+        times.splice(0, 2);
       }
     } else {
       for (let i = 0; i < 24; i++) {

@@ -16,7 +16,6 @@ const AvailTimes = (props) => {
 
   if (dateFns.format(props.selectedDate, 'M/D/YY') === dateFns.format(new Date(), 'M/D/YY')) {
     const todayTimes = [];
-    console.log(currentHour, hour);
     if (currentHour > hour && checkTime[1] === 'PM') {
       for (let i = 0; i < timeSlots.length; i++) {
         const formattedH = Number(timeSlots[i].split(' ')[0].split(':')[0]);
