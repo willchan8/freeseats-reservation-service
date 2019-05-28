@@ -12,11 +12,11 @@ const AvailTimes = (props) => {
   const timeSlots = props.availTimeSlots;
   let times;
   // const currentHour = Number(dateFns.format(new Date(), 'H'));
-  const currentHour = Number(dateFns.format(new Date(), 'h'));
+  const currentHour = dateFns.format(new Date(), 'h:mm A');
 
   if (dateFns.format(props.selectedDate, 'M/D/YY') === dateFns.format(new Date(), 'M/D/YY')) {
     const todayTimes = [];
-    if (currentHour > hour && checkTime[1] === 'PM') {
+    if (currentHour === props.time) {
       for (let i = 0; i < timeSlots.length; i++) {
         const formattedH = Number(timeSlots[i].split(' ')[0].split(':')[0]);
         if (formattedH === hour) {
