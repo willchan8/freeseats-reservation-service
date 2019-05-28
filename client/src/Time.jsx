@@ -79,7 +79,7 @@ class Time extends React.Component {
                 {i}:30 AM
               </option>
             );
-          } else if (i === 12) {
+          } else if (i == 12) {
             times.push(
               <option key={i} value={`${i}:00 PM`}>
                 {i}:00 PM
@@ -91,7 +91,7 @@ class Time extends React.Component {
           }
         }
       }
-      if (currentMin > 30) {
+      if (currentMin < 30) {
         times.splice(0, 1);
       }
     } else {
