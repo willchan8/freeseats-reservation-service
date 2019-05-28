@@ -9,7 +9,7 @@
     "build": "webpack -d",
     "start": "node server/connection.js",
     "seed": "node db/seed.js",
-    "test": "jest",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
