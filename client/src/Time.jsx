@@ -91,7 +91,7 @@ class Time extends React.Component {
           }
         }
       }
-      if (currentMin < 30) {
+      if (currentMin <= 30) {
         times.splice(0, 1);
       }
     } else {
