@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import '../../public/styles.css';
 
-// can possible refactor PartySize to be stateless functional (might decrease page load time)
-
 class PartySize extends React.Component {
   constructor(props) {
     super(props);
@@ -22,10 +20,6 @@ class PartySize extends React.Component {
     this.setState({
       size: e.target.value,
     });
-
-    // Add 'For' before every option value selected but not show in drop down menu
-    // const default = 'For ';
-    // return 'For ' + e.target.value;
   }
 
   onChangeFuncs(e) {

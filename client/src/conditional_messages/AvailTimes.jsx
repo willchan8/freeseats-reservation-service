@@ -11,11 +11,12 @@ const AvailTimes = (props) => {
   const hour = Number(checkHour[0]);
   const timeSlots = props.availTimeSlots;
   let times;
-  const currentHour = Number(dateFns.format(new Date(), 'H'));
+  // const currentHour = Number(dateFns.format(new Date(), 'H'));
+  const currentHour = dateFns.format(new Date(), 'h:mm A');
 
   if (dateFns.format(props.selectedDate, 'M/D/YY') === dateFns.format(new Date(), 'M/D/YY')) {
     const todayTimes = [];
-    if (currentHour > hour) {
+    if (currentHour === props.time) {
       for (let i = 0; i < timeSlots.length; i++) {
         const formattedH = Number(timeSlots[i].split(' ')[0].split(':')[0]);
         if (formattedH === hour) {
@@ -28,10 +29,99 @@ const AvailTimes = (props) => {
           <span className="avail-time-caption">{time}</span>
         </div>;
       });
-    }
 
-    if (todayTimes.length === 0) {
-      props.noAvailability();
+      if (todayTimes.length === 0) {
+        props.noAvailability();
+      }
+    } else {
+      if (hour === 4) {
+        const timesFor4 = [];
+        for (let i = 0; i < timeSlots.length; i++) {
+          const hour = Number(timeSlots[i].split(' ')[0].split(':')[0]);
+          if (hour === 6) {
+            timesFor4.push(timeSlots[i]);
+          }
+        }
+
+        times = timesFor4.map(time => {
+          return <div className="avail-time" key={time} >
+            <span className="avail-time-caption">{time}</span>
+          </div>;
+        });
+
+        if (timesFor4.length === 0) {
+          props.noAvailability();
+        }
+
+      } else if (hour === 5) {
+        const timesFor5 = [];
+
+        for (let i = 0; i < timeSlots.length; i++) {
+          const hour = Number(timeSlots[i].split(' ')[0].split(':')[0]);
+          if (hour === 6 || hour === 7) {
+            timesFor5.push(timeSlots[i]);
+          }
+        }
+
+        times = timesFor5.map(time => {
+          return <div className="avail-time" key={time} >
+            <span className="avail-time-caption">{time}</span>
+          </div>;
+        });
+
+        if (timesFor5.length === 0) {
+          props.noAvailability();
+        }
+
+      } else if (hour === 9) {
+        const timesFor9 = [];
+        for (let i = 0; i < timeSlots.length; i++) {
+          const hour = Number(timeSlots[i].split(' ')[0].split(':')[0]);
+          if (hour === 7 || hour === 8) {
+            timesFor9.push(timeSlots[i]);
+          }
+        }
+
+        times = timesFor9.map(time => {
+          return <div className="avail-time" key={time} >
+            <span className="avail-time-caption">{time}</span>
+          </div>;
+        });
+
+        if (timesFor9.length === 0) {
+          props.noAvailability();
+        }
+
+      } else if (hour === 10) {
+        const timesFor10 = [];
+        for (let i = 0; i < timeSlots.length; i++) {
+          const hour = Number(timeSlots[i].split(' ')[0].split(':')[0]);
+          if (hour === 8 || timeSlots[i] === '7:30 PM' || timeSlots[i] === '7:45 PM') {
+            timesFor10.push(timeSlots[i]);
+          }
+        }
+
+        times = timesFor10.map(time => {
+          return <div className="avail-time" key={time} >
+            <span className="avail-time-caption">{time}</span>
+          </div>;
+        });
+
+        if (timesFor10.length === 0) {
+          props.noAvailability();
+        }
+
+      } else {
+        times = props.availTimeSlots.map(time => {
+          return <div className="avail-time" key={time} >
+            <span className="avail-time-caption">{time}</span>
+          </div>;
+        });
+
+        if (times.length === 0) {
+          props.noAvailability();
+        }
+      }
     }
   } else {
     if (hour === 4) {
@@ -49,7 +139,7 @@ const AvailTimes = (props) => {
         </div>;
       });
 
-      if (times.length === 0) {
+      if (timesFor4.length === 0) {
         props.noAvailability();
       }
 
@@ -69,7 +159,7 @@ const AvailTimes = (props) => {
         </div>;
       });
 
-      if (times.length === 0) {
+      if (timesFor5.length === 0) {
         props.noAvailability();
       }
 
@@ -88,7 +178,7 @@ const AvailTimes = (props) => {
         </div>;
       });
 
-      if (times.length === 0) {
+      if (timesFor9.length === 0) {
         props.noAvailability();
       }
 
@@ -107,7 +197,7 @@ const AvailTimes = (props) => {
         </div>;
       });
 
-      if (times.length === 0) {
+      if (timesFor10.length === 0) {
         props.noAvailability();
       }
 

@@ -280,7 +280,7 @@
   padding-bottom: 7px;
 }
 
-.calendar-day-res, .calendar-day-res-empty, .calendar-day-restoday {
+.calendar-day-res {
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
@@ -289,17 +289,10 @@
   height: 33px;
   width: 36px;
   background-clip: padding-box;
-}
-
-.calendar-day-res, .calendar-day-restoday {
   background-color: #fff;
 }
 
-.calendar-day-res-empty {
-  cursor: default;
-}
-
-.calendar-day-res:hover {
+.hoverDates:hover {
   border: 2px solid #da3743;
 }
 
