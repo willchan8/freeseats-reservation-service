@@ -268,7 +268,7 @@ class Reservations extends React.Component {
 }
 
 Reservations.propTypes = {
-  urlId: PropTypes.number,
+  urlId: PropTypes.string,
 };
 
 export default Reservations;
