@@ -209,7 +209,9 @@ class Reservations extends React.Component {
   }
 
   getBookings() {
-    axios.get('http://localhost:3020/reservations/1')
+    let parseId = this.props.urlId.split('/');
+    const id = parseId[parseId.length - 1];
+    axios.get(`http://localhost:3020/${id}/reservations`)
       .then((res) => {
         this.setState({
           bookings: res.data.booked,
@@ -266,7 +268,7 @@ class Reservations extends React.Component {
 }
 
 Reservations.propTypes = {
-  id: PropTypes.number,
+  urlId: PropTypes.number,
 };
 
 export default Reservations;
