@@ -128,14 +128,14 @@ class Calendar extends React.Component {
         if (pastCurrentDay) {
           prevMonthStyle = '';
         } else {
-          hoverDates = 'hoverDates';
+          hoverDates = 'hoverStyle';
         }
 
         if (!pastCurrentDay && !prevMonthStyle && !nextMonthStyle) {
-          currentDay = dateFns.format(day, 'M/D/YY') === dateFns.format(this.props.selectedDate, 'M/D/YY') ? 'selectedDay' : '';
+          currentDay = dateFns.format(day, 'M/D/YY') === dateFns.format(this.props.selectedDate, 'M/D/YY') ? 'selectedDate' : '';
         }
 
-        if (currentDay === 'selectedDay') {
+        if (currentDay === 'selectedDate') {
           hoverDates = '';
         }
 

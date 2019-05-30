@@ -267,7 +267,7 @@
   background-clip: padding-box;
   background-color: #fff;
 }
-.hoverDates:hover {
+.hoverStyle:hover {
   border: 2px solid #da3743;
 }
 .calendar-day-res::after {
@@ -280,7 +280,7 @@
   width: auto;
   z-index: -1;
 }
-.selectedDay {
+.selectedDate {
   border: 2px solid #da3743;
 }
 .clickedDate {
