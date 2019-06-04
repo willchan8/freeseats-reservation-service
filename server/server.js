@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 const Availability = require('../db/db.js');
+const createRestaurant = require('../db/createRestaurant.js');
 
 const app = express();
 
@@ -22,15 +23,61 @@ app.get('/:id', (req, res) => {
   }
 });
 
-app.get('/:id/reservations', (req, res) => {
-  const resID = Number(req.params.id);
-
-  Availability.findOne({ where: { id: resID } })
-    .then((main) => {
-      res.status(200).send(main);
+// CREATE
+app.post('/', (req, res) => {
+  createRestaurant()
+    .then(() => {
+      res.status(200).send();
     })
     .catch((err) => {
-      res.status(404).send('unable to retrieve from db: ', err);
+      res.status(404).send('Unable to post new restaurant to db: ', err);
+    });
+});
+
+// READ
+app.get('/:id/reservations', (req, res) => {
+  const restID = Number(req.params.id);
+
+  Availability.findOne({ 
+      where: { id: restID } 
+    })
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      res.status(404).send('Unable to retrieve restaurant reservations data from db: ', err);
+    });
+});
+
+// UPDATE
+app.put('/:id/reservations', (req, res) => {
+  const restID = Number(req.params.id);
+  const bookings = req.body.bookings;
+
+  Availability.update(   
+      { booked: bookings },
+      { where: { id: restID} }
+    )
+    .then(() => {
+      res.status(200).send();
+    })
+    .catch((err) => {
+      res.status(404).send('Unable to update number of restaurant bookings in db: ', err);
+    });
+});
+
+// DELETE
+app.put('/:id/reservations', (req, res) => {
+  const restID = Number(req.params.id);
+
+  Availability.destroy({ 
+      where: { id : restID }
+    })
+    .then(() => {
+      res.status(200).send();
+    })
+    .catch((err) => {
+      res.status(404).send('Unable to delete restaurant in db: ', err);
     });
 });
 
