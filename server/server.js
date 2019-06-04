@@ -67,7 +67,7 @@ app.put('/:id/reservations', (req, res) => {
 });
 
 // DELETE
-app.put('/:id/reservations', (req, res) => {
+app.delete('/:id/reservations', (req, res) => {
   const restID = Number(req.params.id);
 
   Availability.destroy({ 
