@@ -42,7 +42,7 @@ npm run seed
 From within the root directory:
 ```sh
 npm install
-npm run build
+npm run react-dev
 npm start
 ```
 - In a broswer, go to: localhost:3020
