@@ -64,7 +64,7 @@ npm start
 Endpoint: ```/restaurant/:id/reservations```  
 
 **Success Response**:
-  * An object containing the reservation information for a specific restaurant with ```id```
+  * An object containing the all the reservation informations for a specific restaurant with ```id```
   * Code: 200
   * Expected Content:
 
@@ -98,7 +98,7 @@ Endpoint: ```/restaurant/:id/reservations```
 
 Endpoint: ```/restaurant```
 
-Expected Data Input: An object containing the reservation information for a new restaurant
+Expected Data Input: An object containing the new restaurant name and all the reservation information
 
 Example: 
   ```sh
