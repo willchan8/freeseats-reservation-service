@@ -1553,3 +1553,5 @@ const restaurantNames = [
 'Zutros',
 'Zutro’s',
 ]
+
+module.exports = restaurantNames;
