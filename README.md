@@ -42,7 +42,7 @@ npm run seed
 From within the root directory:
 ```sh
 npm install
-npm run react-dev
+npm run build
 npm start
 ```
 - In a broswer, go to: localhost:3020
@@ -51,7 +51,124 @@ npm start
 
 | Type          | Endpoint                       | Description                                                            |
 | ------------- | ------------------------------ | -----------------------------------------------------------------------|
-| GET           | `restaurant/:id/reservations`  | Get the reservation info for a specific restaurant                     |
-| POST          | `restaurant`                   | Create a new restaurant listing                                        |
-| PUT           | `restaurant/:id/reservations`  | Update the availability of a time slot for a specific restaurant       |
-| DELETE        | `restaurant/:id`               | Delete a specific restaurant listing                                   |
+| GET           | `/restaurant/:id/reservations` | Get the reservation info for a specific restaurant                     |
+| POST          | `/restaurant/`                 | Create a new restaurant listing                                        |
+| PUT           | `/restaurant/:id/reservations` | Update the availability of a time slot for a specific restaurant       |
+| DELETE        | `/restaurant/:id`              | Delete a restaurant listing                                            |
+
+
+## GET
+
+### Restaurant Reservations
+
+Endpoint: ```/restaurant/:id/reservations```  
+
+**Success Response**:
+  * An object containing the reservation information for a specific restaurant with ```id```
+  * Code: 200
+  * Expected Content:
+
+```sh
+{
+  id: 1
+  name: 'Millennium Sandwich',
+  booked: 10,
+  "6:00 PM": 8,
+  "6:15 PM": 7,
+  "6:30 PM": 6,
+  "6:45 PM": 3,
+  "7:00 PM": 9,
+  "7:15 PM": 9,
+  "7:30 PM": 8,
+  "7:45 PM": 8,
+  "8:00 PM": 10,
+  "8:15 PM": 7,
+  "8:30 PM": 7
+}
+
+```
+**Error Response**: 
+  * Code: 500
+
+
+
+## POST
+
+### Create a new restaurant listing 
+
+Endpoint: ```/restaurant```
+
+Expected Data Input: An object containing the reservation information for a new restaurant
+
+Example: 
+  ```sh
+{ 
+  id: 10000001
+  name: 'Asian Pearl',
+  booked: 0,
+  "6:00 PM": 10,
+  "6:15 PM": 10,
+  "6:30 PM": 10,
+  "6:45 PM": 10,
+  "7:00 PM": 15,
+  "7:15 PM": 15,
+  "7:30 PM": 15,
+  "7:45 PM": 15,
+  "8:00 PM": 15,
+  "8:15 PM": 10,
+  "8:30 PM": 10
+}
+  ```
+
+**Success Response:**
+  * Code: 201
+
+**Error Response:**
+  * Code: 500
+
+
+## PUT
+
+### Update the availability of a time slot for a specific restaurant
+
+Endpoint: ```/restaurant/:id/reservations```
+
+Expected Data Input: Object with reservation info for a specific restaurant.
+
+Example: 
+  ```sh
+{ 
+  id: 20,
+  name: "Aroma Borealis",
+  booked: 4,
+  "8:00 PM": 2,
+}
+  ```
+
+**Success Response:**
+  * Code: 201
+
+**Error Response:**
+  * Code: 500
+
+
+## DELETE
+
+### Delete a restaurant listing
+
+Endpoint: ```restaurant/:id```
+
+Expected Data Input: Object with the id of a specific restaurant.
+
+Example: 
+  ```sh
+{ 
+  id: 999
+}
+  ```
+
+**Success Response:**
+  * Code: 201
+
+**Error Response:**
+  * Code: 500
