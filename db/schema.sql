@@ -23,6 +23,7 @@ CREATE TABLE restaurants (
   "8:30 PM" INT
 );
 
+
 -- To pipe schema into PostgreSQL DB: 
 -- psql -d opentable -a -f schema.sql
 
@@ -32,3 +33,6 @@ CREATE TABLE restaurants (
 -- \c opentable (use database)
 -- \dt (shows all tables in database)
 -- COPY restaurants(name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") FROM '/Users/williamchan/Desktop/sdc/reservations-service/db/data.csv' DELIMITER ',' CSV HEADER;
+
+-- To improve read query speed:
+-- CREATE INDEX name_idx ON restaurants (name);

@@ -21,8 +21,9 @@ const randomRestaurantIndex = () => faker.random.number({
 
 const dataGen = () => {
   writer.pipe(fs.createWriteStream('newData.csv'));
-  for (var i = 0; i < 10000000; i++) {
+  for (var i = 1; i < 10000001; i++) {
     writer.write({
+      id: i,
       name: restaurantNames[randomRestaurantIndex()]  + ' ' + i,
       booked: booked(),
       '6:00 PM': seats(),
