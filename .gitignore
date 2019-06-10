@@ -27,3 +27,4 @@ dist/
 public/bundle.js
 package-lock.json
 db/data.csv
+reservationData.csv

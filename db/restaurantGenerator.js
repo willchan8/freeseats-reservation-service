@@ -20,7 +20,7 @@ const randomRestaurantIndex = () => faker.random.number({
 });
 
 const dataGen = () => {
-  writer.pipe(fs.createWriteStream('newData.csv'));
+  writer.pipe(fs.createWriteStream('restaurantData.csv'));
   for (var i = 1; i < 10000001; i++) {
     writer.write({
       id: i,
