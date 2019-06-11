@@ -9,7 +9,7 @@ const randomIndex = () => faker.random.number({
 });
 
 const randomGuests = () => faker.random.number({
-  min: 2,
+  min: 1,
   max: 6,
 });
 
@@ -32,7 +32,7 @@ const randomRestaurantId = () => faker.random.number({
   max: 10000000,
 });
 
-var i = 50000001;
+var i = 20000001;
 var encoding = 'utf8';
 var callback = () => { console.log('Data Generation Complete!') };
 writeCSV();
@@ -60,9 +60,9 @@ function writeCSV(){
       }
       ok = writer.write(data, encoding);
     } 
-  } while (i > 0 && ok);
+  } while (i > 1 && ok);
 
-  if (i > 0){
+  if (i > 1){
     writer.once('drain', writeCSV)
   }
 }

@@ -1,81 +1,43 @@
-===========================================================================================================================================================
-QUERY RESULTS BY RESTAURANT ID (PRIMARY KEY) ||  SELECT * FROM restaurants WHERE id=9998775;
-===========================================================================================================================================================
-
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.611 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.659 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.533 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.535 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.524 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.531 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.535 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.511 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.532 ms
-opentable=# SELECT * FROM restaurants WHERE id=9998775;
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
-(1 row)
-
-Time: 0.503 ms
+          POSTGRES                       CASSANDRA 
+GET    -  1.928 ms / 2.718 ms     |      5.030 ms / 16.187 ms
+PUT    -  8.774 ms                |      7.445 ms
+POST   -  1.649 ms                |      3.227 ms
+DELETE -  4.191 ms                |      2.416 ms
 
 
 ===========================================================================================================================================================
-QUERY RESULTS BY RESTAURANT NAME || SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
+POSTGRES GET: QUERY RESULTS BY RESTAURANT ID (PRIMARY KEY, pre-cached)
+===========================================================================================================================================================
+
+opentable=# SELECT * FROM restaurants WHERE id=9998775;
+   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
+---------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
+ 9998775 | The Ramen Shamen 9998775 |      8 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3
+(1 row)
+
+Time: 2.075 ms
+
+
+opentable=# SELECT * FROM restaurants WHERE id=9998500;
+   id    |         name         | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
+---------+----------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
+ 9998500 | Atomic Donut 9998500 |      9 |       4 |       5 |       9 |       8 |       3 |      10 |       6 |       4 |       8 |      10 |       3
+(1 row)
+
+Time: 1.650 ms
+
+
+opentable=# SELECT * FROM restaurants WHERE id=9999999;
+   id    |           name            | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
+---------+---------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
+ 9999999 | Dutch Oven Gretel 9999999 |      8 |       2 |       2 |       4 |      10 |       2 |       9 |       9 |       8 |       9 |      10 |       5
+(1 row)
+
+Time: 2.059 ms
+
+
+===========================================================================================================================================================
+POSTGRES GET: QUERY RESULTS BY RESTAURANT NAME (Optimized by Indexed Key, pre-cached)
 ===========================================================================================================================================================
 
 
@@ -84,150 +46,412 @@ opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
 ---------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
  9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
 (1 row)
-
-Time: 1714.324 ms (00:01.714)
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 452.167 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 449.233 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 447.652 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 447.530 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 447.052 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 446.279 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 447.114 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 447.184 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-Time: 444.925 ms
-opentable=# CREATE INDEX name_idx ON restaurants (name);
-CREATE INDEX
-Time: 13303.788 ms (00:13.304)
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
-
-
-
-===========================================================================================================================================================
-QUERY RESULTS BY RESTAURANT NAME (AFTER OPTIMIZATION) || SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-===========================================================================================================================================================
-
-
 
 Time: 1.902 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
+
+
+opentable=# SELECT * FROM restaurants WHERE name='Glossy Trotsky 9998556';
+   id    |          name          | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
+---------+------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
+ 9998556 | Glossy Trotsky 9998556 |      3 |       5 |      10 |       2 |       2 |       5 |       7 |       9 |       4 |       8 |      10 |       2
 (1 row)
 
-Time: 0.554 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
+Time: 3.645 ms
+
+
+opentable=# SELECT * FROM restaurants WHERE name='Millennium Sandwich 9998862';
+   id    |            name             | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
+---------+-----------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
+ 9998862 | Millennium Sandwich 9998862 |     14 |       8 |      10 |       7 |       8 |       2 |       2 |       3 |       3 |       3 |       9 |       9
 (1 row)
 
-Time: 0.606 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
+Time: 2.608 ms
 
-Time: 0.676 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
 
-Time: 0.566 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
+===========================================================================================================================================================
+POSTGRES PUT: QUERY RESULTS BY RESTAURANT NAME (Optimized by Indexed Key, pre-cached)
+===========================================================================================================================================================
 
-Time: 0.525 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
+opentable=# UPDATE restaurants SET "8:15 PM" = 5 WHERE name='Le Petit Chef 9998469';
+UPDATE 1
+Time: 9.952 ms
 
-Time: 0.555 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
+opentable=# UPDATE restaurants SET "7:00 PM" = 0 WHERE name='Hash Browns and New Grounds 9998523';
+UPDATE 1
+Time: 3.315 ms
 
-Time: 0.551 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
+opentable=# UPDATE restaurants SET "7:30 PM" = 0 WHERE name='Jurassic Pork 9998350';
+UPDATE 1
+Time: 13.315 ms
 
-Time: 0.530 ms
-opentable=# SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
-   id    |           name           | booked | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM 
----------+--------------------------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------
- 9998243 | Seafood Seranade 9998243 |     13 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3
-(1 row)
 
-Time: 0.432 ms
-opentable=# 
+===========================================================================================================================================================
+POSTGRES POST
+===========================================================================================================================================================
+
+opentable=# INSERT INTO restaurants(name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES ('New Restaurant 10101010',3,6,7,10,7,9,10,5,9,9,10,5);
+INSERT 0 1
+Time: 2.691 ms
+
+opentable=# INSERT INTO restaurants(name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES ('New Restaurant 20202020',3,6,7,10,7,9,10,5,9,9,10,5);
+INSERT 0 1
+Time: 1.170 ms
+
+opentable=# INSERT INTO restaurants(name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES ('New Restaurant 30303030',3,6,7,10,7,9,10,5,9,9,10,5);
+INSERT 0 1
+Time: 1.087 ms
+
+
+===========================================================================================================================================================
+POSTGRES DELETE
+===========================================================================================================================================================
+
+opentable=# DELETE FROM restaurants WHERE id=10000001;
+DELETE 1
+Time: 6.324 ms
+
+opentable=# DELETE FROM restaurants WHERE id=9980000;
+DELETE 1
+Time: 3.467 ms
+
+opentable=# DELETE FROM reservations WHERE id=9999999;
+DELETE 1
+Time: 2.793 ms
+
+
+===========================================================================================================================================================
+CASSANDRA GET: QUERY RESULTS BY RESTAURANT ID (PRIMARY KEY, pre-cached)
+===========================================================================================================================================================
+
+cqlsh:opentable> SELECT * FROM restaurants WHERE id=9998775;
+
+ id      | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM | booked | name
+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+--------+--------------------------
+ 9998775 |       2 |       3 |       6 |       9 |       4 |       9 |       7 |       6 |       2 |       5 |       3 |      8 | The Ramen Shamen 9998775
+
+(1 rows)
+
+Tracing session: 3b6d0680-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                          | timestamp                  | source    | source_elapsed | client
+-----------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                Execute CQL3 query | 2019-06-10 20:01:39.176000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing SELECT * FROM restaurants WHERE id=9998775; [Native-Transport-Requests-1] | 2019-06-10 20:01:39.176000 | 127.0.0.1 |            546 | 127.0.0.1
+                                 Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:01:39.177000 | 127.0.0.1 |            941 | 127.0.0.1
+                     Executing single-partition query on restaurants [ReadStage-3] | 2019-06-10 20:01:39.178000 | 127.0.0.1 |           1843 | 127.0.0.1
+                                        Acquiring sstable references [ReadStage-3] | 2019-06-10 20:01:39.178000 | 127.0.0.1 |           2024 | 127.0.0.1
+                                           Merging memtable contents [ReadStage-3] | 2019-06-10 20:01:39.178000 | 127.0.0.1 |           2235 | 127.0.0.1
+                Partition index with 0 entries found for sstable 113 [ReadStage-3] | 2019-06-10 20:01:39.179000 | 127.0.0.1 |           3151 | 127.0.0.1
+                              Read 1 live rows and 0 tombstone cells [ReadStage-3] | 2019-06-10 20:01:39.181000 | 127.0.0.1 |           5115 | 127.0.0.1
+                                                                  Request complete | 2019-06-10 20:01:39.181594 | 127.0.0.1 |           5594 | 127.0.0.1
+
+
+cqlsh:opentable> SELECT * FROM restaurants WHERE id=9998500;
+
+ id      | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM | booked | name
+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+--------+----------------------
+ 9998500 |       4 |       5 |       9 |       8 |       3 |      10 |       6 |       4 |       8 |      10 |       3 |      9 | Atomic Donut 9998500
+
+(1 rows)
+
+Tracing session: 67238420-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                          | timestamp                  | source    | source_elapsed | client
+-----------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                Execute CQL3 query | 2019-06-10 20:02:52.514000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing SELECT * FROM restaurants WHERE id=9998500; [Native-Transport-Requests-2] | 2019-06-10 20:02:52.514000 | 127.0.0.1 |            287 | 127.0.0.1
+                                 Preparing statement [Native-Transport-Requests-2] | 2019-06-10 20:02:52.515000 | 127.0.0.1 |            579 | 127.0.0.1
+                                Read-repair DC_LOCAL [Native-Transport-Requests-2] | 2019-06-10 20:02:52.515000 | 127.0.0.1 |           1219 | 127.0.0.1
+                     Executing single-partition query on restaurants [ReadStage-1] | 2019-06-10 20:02:52.516000 | 127.0.0.1 |           2347 | 127.0.0.1
+                                        Acquiring sstable references [ReadStage-1] | 2019-06-10 20:02:52.516000 | 127.0.0.1 |           2493 | 127.0.0.1
+                                           Merging memtable contents [ReadStage-1] | 2019-06-10 20:02:52.517000 | 127.0.0.1 |           2603 | 127.0.0.1
+                Partition index with 0 entries found for sstable 113 [ReadStage-1] | 2019-06-10 20:02:52.518000 | 127.0.0.1 |           3792 | 127.0.0.1
+                              Read 1 live rows and 0 tombstone cells [ReadStage-1] | 2019-06-10 20:02:52.519000 | 127.0.0.1 |           4835 | 127.0.0.1
+                                                                  Request complete | 2019-06-10 20:02:52.519169 | 127.0.0.1 |           5169 | 127.0.0.1
+
+
+cqlsh:opentable> SELECT * FROM restaurants WHERE id=9999999;
+
+ id      | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM | booked | name
+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+--------+---------------------------
+ 9999999 |       5 |       2 |       4 |      10 |       2 |       9 |       9 |       8 |       9 |      10 |       5 |      8 | Dutch Oven Gretel 9999999
+
+(1 rows)
+
+Tracing session: 6f1d9990-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                          | timestamp                  | source    | source_elapsed | client
+-----------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                Execute CQL3 query | 2019-06-10 20:03:05.897000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing SELECT * FROM restaurants WHERE id=9999999; [Native-Transport-Requests-2] | 2019-06-10 20:03:05.897000 | 127.0.0.1 |            319 | 127.0.0.1
+                                 Preparing statement [Native-Transport-Requests-2] | 2019-06-10 20:03:05.897000 | 127.0.0.1 |            671 | 127.0.0.1
+                                Read-repair DC_LOCAL [Native-Transport-Requests-2] | 2019-06-10 20:03:05.898000 | 127.0.0.1 |           1422 | 127.0.0.1
+                     Executing single-partition query on restaurants [ReadStage-1] | 2019-06-10 20:03:05.898000 | 127.0.0.1 |           1733 | 127.0.0.1
+                                        Acquiring sstable references [ReadStage-1] | 2019-06-10 20:03:05.898000 | 127.0.0.1 |           1859 | 127.0.0.1
+                                           Merging memtable contents [ReadStage-1] | 2019-06-10 20:03:05.899000 | 127.0.0.1 |           1942 | 127.0.0.1
+                Partition index with 0 entries found for sstable 113 [ReadStage-1] | 2019-06-10 20:03:05.900000 | 127.0.0.1 |           2927 | 127.0.0.1
+                              Read 1 live rows and 0 tombstone cells [ReadStage-1] | 2019-06-10 20:03:05.901000 | 127.0.0.1 |           4165 | 127.0.0.1
+                                                                  Request complete | 2019-06-10 20:03:05.901580 | 127.0.0.1 |           4580 | 127.0.0.1
+
+
+===========================================================================================================================================================
+CASSANDRA GET: QUERY RESULTS BY RESTAURANT NAME (Optimized by Indexed Key, pre-cached)
+===========================================================================================================================================================
+
+
+cqlsh:opentable> SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243';
+
+ id      | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM | booked | name
+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+--------+--------------------------
+ 9998243 |       7 |       3 |       6 |       4 |       3 |       4 |       2 |       2 |       9 |       4 |       3 |     13 | Seafood Seranade 9998243
+
+(1 rows)
+
+Tracing session: 8a9eebb0-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                                                                              | timestamp                  | source    | source_elapsed | client
+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                                                                    Execute CQL3 query | 2019-06-10 20:03:52.044000 | 127.0.0.1 |              0 | 127.0.0.1
+                                Parsing SELECT * FROM restaurants WHERE name='Seafood Seranade 9998243'; [Native-Transport-Requests-1] | 2019-06-10 20:03:52.044000 | 127.0.0.1 |            282 | 127.0.0.1
+                                                                                     Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:03:52.044000 | 127.0.0.1 |            659 | 127.0.0.1
+                                        Index mean cardinalities are name_idx:1. Scanning with name_idx. [Native-Transport-Requests-1] | 2019-06-10 20:03:52.051000 | 127.0.0.1 |           7533 | 127.0.0.1
+                                                                               Computing ranges to query [Native-Transport-Requests-1] | 2019-06-10 20:03:52.054000 | 127.0.0.1 |          10232 | 127.0.0.1
+ Submitting range requests on 257 ranges with a concurrency of 257 (0.003515625 rows per range expected) [Native-Transport-Requests-1] | 2019-06-10 20:03:52.055000 | 127.0.0.1 |          11583 | 127.0.0.1
+                                                                   Submitted 1 concurrent range requests [Native-Transport-Requests-1] | 2019-06-10 20:03:52.060000 | 127.0.0.1 |          16476 | 127.0.0.1
+                                                            Executing read on opentable.restaurants using index name_idx [ReadStage-2] | 2019-06-10 20:03:52.063000 | 127.0.0.1 |          19148 | 127.0.0.1
+                                                                Executing single-partition query on restaurants.name_idx [ReadStage-2] | 2019-06-10 20:03:52.063000 | 127.0.0.1 |          19383 | 127.0.0.1
+                                                                                            Acquiring sstable references [ReadStage-2] | 2019-06-10 20:03:52.063000 | 127.0.0.1 |          19447 | 127.0.0.1
+                                               Skipped 0/6 non-slice-intersecting sstables, included 0 due to tombstones [ReadStage-2] | 2019-06-10 20:03:52.063000 | 127.0.0.1 |          19569 | 127.0.0.1
+                                                                                  Bloom filter allows skipping sstable 9 [ReadStage-2] | 2019-06-10 20:03:52.063000 | 127.0.0.1 |          19818 | 127.0.0.1
+                                                                     Partition index with 0 entries found for sstable 18 [ReadStage-2] | 2019-06-10 20:03:52.064000 | 127.0.0.1 |          20614 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 27 [ReadStage-2] | 2019-06-10 20:03:52.067000 | 127.0.0.1 |          23288 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 28 [ReadStage-2] | 2019-06-10 20:03:52.067000 | 127.0.0.1 |          23472 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 29 [ReadStage-2] | 2019-06-10 20:03:52.067000 | 127.0.0.1 |          23543 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 30 [ReadStage-2] | 2019-06-10 20:03:52.067000 | 127.0.0.1 |          23699 | 127.0.0.1
+                                                                         Executing single-partition query on restaurants [ReadStage-2] | 2019-06-10 20:03:52.067000 | 127.0.0.1 |          23790 | 127.0.0.1
+                                                                                            Acquiring sstable references [ReadStage-2] | 2019-06-10 20:03:52.067000 | 127.0.0.1 |          23853 | 127.0.0.1
+                                                                                               Merging memtable contents [ReadStage-2] | 2019-06-10 20:03:52.067001 | 127.0.0.1 |          23899 | 127.0.0.1
+                                                                    Partition index with 0 entries found for sstable 113 [ReadStage-2] | 2019-06-10 20:03:52.068000 | 127.0.0.1 |          24477 | 127.0.0.1
+                                                                                  Read 1 live rows and 0 tombstone cells [ReadStage-2] | 2019-06-10 20:03:52.070000 | 127.0.0.1 |          26461 | 127.0.0.1
+                                                                               Merged data from memtables and 1 sstables [ReadStage-2] | 2019-06-10 20:03:52.070000 | 127.0.0.1 |          26613 | 127.0.0.1
+                                                                                                                      Request complete | 2019-06-10 20:03:52.070865 | 127.0.0.1 |          26865 | 127.0.0.1
+
+
+cqlsh:opentable> SELECT * FROM restaurants WHERE name='Glossy Trotsky 9998556';
+
+ id      | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM | booked | name
+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+--------+------------------------
+ 9998556 |       5 |      10 |       2 |       2 |       5 |       7 |       9 |       4 |       8 |      10 |       2 |      3 | Glossy Trotsky 9998556
+
+(1 rows)
+
+Tracing session: 94c38240-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                                                                              | timestamp                  | source    | source_elapsed | client
+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                                                                    Execute CQL3 query | 2019-06-10 20:04:09.060000 | 127.0.0.1 |              0 | 127.0.0.1
+                                  Parsing SELECT * FROM restaurants WHERE name='Glossy Trotsky 9998556'; [Native-Transport-Requests-1] | 2019-06-10 20:04:09.060000 | 127.0.0.1 |            257 | 127.0.0.1
+                                                                                     Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:04:09.060000 | 127.0.0.1 |            494 | 127.0.0.1
+                                        Index mean cardinalities are name_idx:1. Scanning with name_idx. [Native-Transport-Requests-1] | 2019-06-10 20:04:09.061000 | 127.0.0.1 |           1166 | 127.0.0.1
+                                                                               Computing ranges to query [Native-Transport-Requests-1] | 2019-06-10 20:04:09.061000 | 127.0.0.1 |           1559 | 127.0.0.1
+ Submitting range requests on 257 ranges with a concurrency of 257 (0.003515625 rows per range expected) [Native-Transport-Requests-1] | 2019-06-10 20:04:09.063000 | 127.0.0.1 |           2706 | 127.0.0.1
+                                                                   Submitted 1 concurrent range requests [Native-Transport-Requests-1] | 2019-06-10 20:04:09.065000 | 127.0.0.1 |           5505 | 127.0.0.1
+                                                            Executing read on opentable.restaurants using index name_idx [ReadStage-2] | 2019-06-10 20:04:09.066000 | 127.0.0.1 |           5620 | 127.0.0.1
+                                                                Executing single-partition query on restaurants.name_idx [ReadStage-2] | 2019-06-10 20:04:09.066000 | 127.0.0.1 |           5764 | 127.0.0.1
+                                                                                            Acquiring sstable references [ReadStage-2] | 2019-06-10 20:04:09.066000 | 127.0.0.1 |           5839 | 127.0.0.1
+                                               Skipped 0/6 non-slice-intersecting sstables, included 0 due to tombstones [ReadStage-2] | 2019-06-10 20:04:09.066000 | 127.0.0.1 |           5973 | 127.0.0.1
+                                                                                  Bloom filter allows skipping sstable 9 [ReadStage-2] | 2019-06-10 20:04:09.066000 | 127.0.0.1 |           6200 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 18 [ReadStage-2] | 2019-06-10 20:04:09.066000 | 127.0.0.1 |           6344 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 27 [ReadStage-2] | 2019-06-10 20:04:09.066001 | 127.0.0.1 |           6457 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 28 [ReadStage-2] | 2019-06-10 20:04:09.066001 | 127.0.0.1 |           6563 | 127.0.0.1
+                                                                     Partition index with 0 entries found for sstable 29 [ReadStage-2] | 2019-06-10 20:04:09.068000 | 127.0.0.1 |           7841 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 30 [ReadStage-2] | 2019-06-10 20:04:09.069000 | 127.0.0.1 |           9346 | 127.0.0.1
+                                                                         Executing single-partition query on restaurants [ReadStage-2] | 2019-06-10 20:04:09.069000 | 127.0.0.1 |           9506 | 127.0.0.1
+                                                                                            Acquiring sstable references [ReadStage-2] | 2019-06-10 20:04:09.070000 | 127.0.0.1 |           9587 | 127.0.0.1
+                                                                                               Merging memtable contents [ReadStage-2] | 2019-06-10 20:04:09.070000 | 127.0.0.1 |           9762 | 127.0.0.1
+                                                                    Partition index with 0 entries found for sstable 113 [ReadStage-2] | 2019-06-10 20:04:09.070000 | 127.0.0.1 |          10468 | 127.0.0.1
+                                                                                  Read 1 live rows and 0 tombstone cells [ReadStage-2] | 2019-06-10 20:04:09.071000 | 127.0.0.1 |          11492 | 127.0.0.1
+                                                                               Merged data from memtables and 1 sstables [ReadStage-2] | 2019-06-10 20:04:09.072000 | 127.0.0.1 |          11648 | 127.0.0.1
+                                                                                                                      Request complete | 2019-06-10 20:04:09.071915 | 127.0.0.1 |          11915 | 127.0.0.1
+
+
+cqlsh:opentable> SELECT * FROM restaurants WHERE name='Millennium Sandwich 9998862';
+
+ id      | 6:00 PM | 6:15 PM | 6:30 PM | 6:45 PM | 7:00 PM | 7:15 PM | 7:30 PM | 7:45 PM | 8:00 PM | 8:15 PM | 8:30 PM | booked | name
+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+--------+-----------------------------
+ 9998862 |       8 |      10 |       7 |       8 |       2 |       2 |       3 |       3 |       3 |       9 |       9 |     14 | Millennium Sandwich 9998862
+
+(1 rows)
+
+Tracing session: 9abeba70-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                                                                              | timestamp                  | source    | source_elapsed | client
+---------------------------------------------------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                                                                    Execute CQL3 query | 2019-06-10 20:04:19.095000 | 127.0.0.1 |              0 | 127.0.0.1
+                             Parsing SELECT * FROM restaurants WHERE name='Millennium Sandwich 9998862'; [Native-Transport-Requests-1] | 2019-06-10 20:04:19.095000 | 127.0.0.1 |            182 | 127.0.0.1
+                                                                                     Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:04:19.095000 | 127.0.0.1 |            355 | 127.0.0.1
+                                        Index mean cardinalities are name_idx:1. Scanning with name_idx. [Native-Transport-Requests-1] | 2019-06-10 20:04:19.096000 | 127.0.0.1 |            775 | 127.0.0.1
+                                                                               Computing ranges to query [Native-Transport-Requests-1] | 2019-06-10 20:04:19.096000 | 127.0.0.1 |            882 | 127.0.0.1
+ Submitting range requests on 257 ranges with a concurrency of 257 (0.003515625 rows per range expected) [Native-Transport-Requests-1] | 2019-06-10 20:04:19.096000 | 127.0.0.1 |           1463 | 127.0.0.1
+                                                                   Submitted 1 concurrent range requests [Native-Transport-Requests-1] | 2019-06-10 20:04:19.098000 | 127.0.0.1 |           3238 | 127.0.0.1
+                                                            Executing read on opentable.restaurants using index name_idx [ReadStage-2] | 2019-06-10 20:04:19.098000 | 127.0.0.1 |           3372 | 127.0.0.1
+                                                                Executing single-partition query on restaurants.name_idx [ReadStage-2] | 2019-06-10 20:04:19.098000 | 127.0.0.1 |           3552 | 127.0.0.1
+                                                                                            Acquiring sstable references [ReadStage-2] | 2019-06-10 20:04:19.098000 | 127.0.0.1 |           3638 | 127.0.0.1
+                                               Skipped 0/6 non-slice-intersecting sstables, included 0 due to tombstones [ReadStage-2] | 2019-06-10 20:04:19.099000 | 127.0.0.1 |           3783 | 127.0.0.1
+                                                                                  Bloom filter allows skipping sstable 9 [ReadStage-2] | 2019-06-10 20:04:19.099000 | 127.0.0.1 |           4003 | 127.0.0.1
+                                                                     Partition index with 0 entries found for sstable 18 [ReadStage-2] | 2019-06-10 20:04:19.100000 | 127.0.0.1 |           5292 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 27 [ReadStage-2] | 2019-06-10 20:04:19.101000 | 127.0.0.1 |           6655 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 28 [ReadStage-2] | 2019-06-10 20:04:19.102000 | 127.0.0.1 |           6880 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 29 [ReadStage-2] | 2019-06-10 20:04:19.102000 | 127.0.0.1 |           6975 | 127.0.0.1
+                                                                                 Bloom filter allows skipping sstable 30 [ReadStage-2] | 2019-06-10 20:04:19.102000 | 127.0.0.1 |           7027 | 127.0.0.1
+                                                                         Executing single-partition query on restaurants [ReadStage-2] | 2019-06-10 20:04:19.102000 | 127.0.0.1 |           7083 | 127.0.0.1
+                                                                                            Acquiring sstable references [ReadStage-2] | 2019-06-10 20:04:19.102000 | 127.0.0.1 |           7133 | 127.0.0.1
+                                                                                               Merging memtable contents [ReadStage-2] | 2019-06-10 20:04:19.102000 | 127.0.0.1 |           7184 | 127.0.0.1
+                                                                    Partition index with 0 entries found for sstable 113 [ReadStage-2] | 2019-06-10 20:04:19.103000 | 127.0.0.1 |           7892 | 127.0.0.1
+                                                                                  Read 1 live rows and 0 tombstone cells [ReadStage-2] | 2019-06-10 20:04:19.104000 | 127.0.0.1 |           9271 | 127.0.0.1
+                                                                               Merged data from memtables and 1 sstables [ReadStage-2] | 2019-06-10 20:04:19.104000 | 127.0.0.1 |           9442 | 127.0.0.1
+                                                                                                                      Request complete | 2019-06-10 20:04:19.104783 | 127.0.0.1 |           9783 | 127.0.0.1
+
+
+===========================================================================================================================================================
+CASSANDRA PUT: QUERY RESULTS BY RESTAURANT NAME (Optimized by Indexed Key, pre-cached)
+===========================================================================================================================================================
+
+cqlsh:opentable> UPDATE restaurants SET "8:15 PM" = 5 WHERE id=9998469;
+
+Tracing session: c8debe00-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                                     | timestamp                  | source    | source_elapsed | client
+----------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                           Execute CQL3 query | 2019-06-10 20:05:36.480000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing UPDATE restaurants SET "8:15 PM" = 5 WHERE id=9998469; [Native-Transport-Requests-1] | 2019-06-10 20:05:36.480000 | 127.0.0.1 |            394 | 127.0.0.1
+                                            Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:05:36.481000 | 127.0.0.1 |            852 | 127.0.0.1
+                              Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:05:36.490000 | 127.0.0.1 |           9703 | 127.0.0.1
+                                                     Appending to commitlog [MutationStage-3] | 2019-06-10 20:05:36.490000 | 127.0.0.1 |          10109 | 127.0.0.1
+                                             Adding to restaurants memtable [MutationStage-3] | 2019-06-10 20:05:36.490000 | 127.0.0.1 |          10311 | 127.0.0.1
+                                                                             Request complete | 2019-06-10 20:05:36.497018 | 127.0.0.1 |          17018 | 127.0.0.1
+
+
+cqlsh:opentable> UPDATE restaurants SET "7:00 PM" = 0 WHERE id=9998523;
+
+Tracing session: d917ba10-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                                     | timestamp                  | source    | source_elapsed | client
+----------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                           Execute CQL3 query | 2019-06-10 20:06:03.697000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing UPDATE restaurants SET "7:00 PM" = 0 WHERE id=9998523; [Native-Transport-Requests-2] | 2019-06-10 20:06:03.697000 | 127.0.0.1 |            408 | 127.0.0.1
+                                            Preparing statement [Native-Transport-Requests-2] | 2019-06-10 20:06:03.698000 | 127.0.0.1 |           1261 | 127.0.0.1
+                              Determining replicas for mutation [Native-Transport-Requests-2] | 2019-06-10 20:06:03.699000 | 127.0.0.1 |           2276 | 127.0.0.1
+                                                     Appending to commitlog [MutationStage-1] | 2019-06-10 20:06:03.700000 | 127.0.0.1 |           2590 | 127.0.0.1
+                                             Adding to restaurants memtable [MutationStage-1] | 2019-06-10 20:06:03.700000 | 127.0.0.1 |           2833 | 127.0.0.1
+                                                                             Request complete | 2019-06-10 20:06:03.700286 | 127.0.0.1 |           3286 | 127.0.0.1
+
+
+cqlsh:opentable> UPDATE restaurants SET "7:30 PM" = 0 WHERE id=9998350;
+
+Tracing session: eb7d5a20-8bf5-11e9-95d8-17385371f4aa
+
+ activity                                                                                     | timestamp                  | source    | source_elapsed | client
+----------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                           Execute CQL3 query | 2019-06-10 20:06:34.562000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing UPDATE restaurants SET "7:30 PM" = 0 WHERE id=9998350; [Native-Transport-Requests-1] | 2019-06-10 20:06:34.562000 | 127.0.0.1 |            335 | 127.0.0.1
+                                            Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:06:34.562000 | 127.0.0.1 |            669 | 127.0.0.1
+                              Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:06:34.563000 | 127.0.0.1 |           1155 | 127.0.0.1
+                                                     Appending to commitlog [MutationStage-3] | 2019-06-10 20:06:34.563000 | 127.0.0.1 |           1502 | 127.0.0.1
+                                             Adding to restaurants memtable [MutationStage-3] | 2019-06-10 20:06:34.563000 | 127.0.0.1 |           1754 | 127.0.0.1
+                                                                             Request complete | 2019-06-10 20:06:34.564033 | 127.0.0.1 |           2033 | 127.0.0.1
+
+
+===========================================================================================================================================================
+CASSANDRA POST
+===========================================================================================================================================================
+
+cqlsh:opentable> INSERT INTO restaurants(id, name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES (10000001, 'New Restaurant 10101010',3,6,7,10,7,9,10,5,9,9,10,5);
+
+Tracing session: 29619ef0-8bf6-11e9-95d8-17385371f4aa
+
+ activity                                                                                                                                                                                                                                                                          | timestamp                  | source    | source_elapsed | client
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                                                                                                                                                                                                                Execute CQL3 query | 2019-06-10 20:08:18.399000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing INSERT INTO restaurants(id, name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES (10000001, 'New Restaurant 10101010',3,6,7,10,7,9,10,5,9,9,10,5); [Native-Transport-Requests-1] | 2019-06-10 20:08:18.400000 | 127.0.0.1 |            389 | 127.0.0.1
+                                                                                                                                                                                                                                 Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:08:18.400000 | 127.0.0.1 |           1028 | 127.0.0.1
+                                                                                                                                                                                                                   Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:08:18.401000 | 127.0.0.1 |           1872 | 127.0.0.1
+                                                                                                                                                                                                                                          Appending to commitlog [MutationStage-3] | 2019-06-10 20:08:18.401000 | 127.0.0.1 |           2143 | 127.0.0.1
+                                                                                                                                                                                                                                  Adding to restaurants memtable [MutationStage-3] | 2019-06-10 20:08:18.401000 | 127.0.0.1 |           2312 | 127.0.0.1
+                                                                                                                                                                                                                                                                  Request complete | 2019-06-10 20:08:18.403942 | 127.0.0.1 |           4942 | 127.0.0.1
+
+
+cqlsh:opentable> INSERT INTO restaurants(id, name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES (10000002, 'New Restaurant 20202020',3,6,7,10,7,9,10,5,9,9,10,5);
+
+Tracing session: 371faff0-8bf6-11e9-95d8-17385371f4aa
+
+ activity                                                                                                                                                                                                                                                                          | timestamp                  | source    | source_elapsed | client
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                                                                                                                                                                                                                Execute CQL3 query | 2019-06-10 20:08:41.455000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing INSERT INTO restaurants(id, name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES (10000002, 'New Restaurant 20202020',3,6,7,10,7,9,10,5,9,9,10,5); [Native-Transport-Requests-1] | 2019-06-10 20:08:41.455000 | 127.0.0.1 |            286 | 127.0.0.1
+                                                                                                                                                                                                                                 Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:08:41.456000 | 127.0.0.1 |            755 | 127.0.0.1
+                                                                                                                                                                                                                   Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:08:41.456000 | 127.0.0.1 |           1499 | 127.0.0.1
+                                                                                                                                                                                                                                          Appending to commitlog [MutationStage-3] | 2019-06-10 20:08:41.457000 | 127.0.0.1 |           1739 | 127.0.0.1
+                                                                                                                                                                                                                                  Adding to restaurants memtable [MutationStage-3] | 2019-06-10 20:08:41.457000 | 127.0.0.1 |           1908 | 127.0.0.1
+                                                                                                                                                                                                                                                                  Request complete | 2019-06-10 20:08:41.457333 | 127.0.0.1 |           2333 | 127.0.0.1
+
+
+cqlsh:opentable> INSERT INTO restaurants(id, name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES (10000003, 'New Restaurant 30303030',3,6,7,10,7,9,10,5,9,9,10,5);
+
+Tracing session: 3e8dd910-8bf6-11e9-95d8-17385371f4aa
+
+ activity                                                                                                                                                                                                                                                                          | timestamp                  | source    | source_elapsed | client
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                                                                                                                                                                                                                                Execute CQL3 query | 2019-06-10 20:08:53.921000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing INSERT INTO restaurants(id, name, booked, "6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") VALUES (10000003, 'New Restaurant 30303030',3,6,7,10,7,9,10,5,9,9,10,5); [Native-Transport-Requests-1] | 2019-06-10 20:08:53.921000 | 127.0.0.1 |            282 | 127.0.0.1
+                                                                                                                                                                                                                                 Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:08:53.922000 | 127.0.0.1 |            900 | 127.0.0.1
+                                                                                                                                                                                                                   Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:08:53.922000 | 127.0.0.1 |           1683 | 127.0.0.1
+                                                                                                                                                                                                                                          Appending to commitlog [MutationStage-2] | 2019-06-10 20:08:53.923000 | 127.0.0.1 |           1923 | 127.0.0.1
+                                                                                                                                                                                                                                  Adding to restaurants memtable [MutationStage-2] | 2019-06-10 20:08:53.923000 | 127.0.0.1 |           2066 | 127.0.0.1
+                                                                                                                                                                                                                                                                  Request complete | 2019-06-10 20:08:53.923406 | 127.0.0.1 |           2406 | 127.0.0.1
+
+
+===========================================================================================================================================================
+CASSANDRA DELETE
+===========================================================================================================================================================
+
+cqlsh:opentable> DELETE FROM restaurants WHERE id=10000001;
+
+Tracing session: 05385940-8bf8-11e9-95d8-17385371f4aa
+
+ activity                                                                         | timestamp                  | source    | source_elapsed | client
+----------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                               Execute CQL3 query | 2019-06-10 20:21:36.724000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing DELETE FROM restaurants WHERE id=10000001; [Native-Transport-Requests-2] | 2019-06-10 20:21:36.724000 | 127.0.0.1 |            286 | 127.0.0.1
+                                Preparing statement [Native-Transport-Requests-2] | 2019-06-10 20:21:36.725000 | 127.0.0.1 |            628 | 127.0.0.1
+                  Determining replicas for mutation [Native-Transport-Requests-2] | 2019-06-10 20:21:36.725000 | 127.0.0.1 |           1208 | 127.0.0.1
+                                         Appending to commitlog [MutationStage-3] | 2019-06-10 20:21:36.726000 | 127.0.0.1 |           1642 | 127.0.0.1
+                                 Adding to restaurants memtable [MutationStage-3] | 2019-06-10 20:21:36.726000 | 127.0.0.1 |           1919 | 127.0.0.1
+                                                                 Request complete | 2019-06-10 20:21:36.726477 | 127.0.0.1 |           2477 | 127.0.0.1
+
+
+cqlsh:opentable> DELETE FROM restaurants WHERE id=9980000;
+
+Tracing session: 1570b910-8bf8-11e9-95d8-17385371f4aa
+
+ activity                                                                        | timestamp                  | source    | source_elapsed | client
+---------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                              Execute CQL3 query | 2019-06-10 20:22:03.937000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing DELETE FROM restaurants WHERE id=9980000; [Native-Transport-Requests-1] | 2019-06-10 20:22:03.938000 | 127.0.0.1 |            510 | 127.0.0.1
+                               Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:22:03.938000 | 127.0.0.1 |           1136 | 127.0.0.1
+                 Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:22:03.939000 | 127.0.0.1 |           1644 | 127.0.0.1
+                            Appending to commitlog [Native-Transport-Requests-1] | 2019-06-10 20:22:03.939000 | 127.0.0.1 |           1960 | 127.0.0.1
+                    Adding to restaurants memtable [Native-Transport-Requests-1] | 2019-06-10 20:22:03.939000 | 127.0.0.1 |           2152 | 127.0.0.1
+                                                                Request complete | 2019-06-10 20:22:03.939460 | 127.0.0.1 |           2460 | 127.0.0.1
+
+Tracing session: 35b845d0-8bf8-11e9-95d8-17385371f4aa
+
+ activity                                                                        | timestamp                  | source    | source_elapsed | client
+---------------------------------------------------------------------------------+----------------------------+-----------+----------------+-----------
+                                                              Execute CQL3 query | 2019-06-10 20:22:58.093000 | 127.0.0.1 |              0 | 127.0.0.1
+ Parsing DELETE FROM restaurants WHERE id=9999999; [Native-Transport-Requests-1] | 2019-06-10 20:22:58.093000 | 127.0.0.1 |            290 | 127.0.0.1
+                               Preparing statement [Native-Transport-Requests-1] | 2019-06-10 20:22:58.093000 | 127.0.0.1 |            579 | 127.0.0.1
+                 Determining replicas for mutation [Native-Transport-Requests-1] | 2019-06-10 20:22:58.094000 | 127.0.0.1 |           1318 | 127.0.0.1
+                                        Appending to commitlog [MutationStage-2] | 2019-06-10 20:22:58.095000 | 127.0.0.1 |           1864 | 127.0.0.1
+                                Adding to restaurants memtable [MutationStage-2] | 2019-06-10 20:22:58.095000 | 127.0.0.1 |           2097 | 127.0.0.1
+                                                                Request complete | 2019-06-10 20:22:58.095310 | 127.0.0.1 |           2310 | 127.0.0.1
