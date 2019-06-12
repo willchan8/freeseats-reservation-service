@@ -101,6 +101,18 @@ opentable=# INSERT INTO restaurants(name, booked, "6:00 PM", "6:15 PM", "6:30 PM
 INSERT 0 1
 Time: 1.087 ms
 
+opentable=# INSERT INTO reservations(restaurant_id, reservation_date, reservation_time, guests) VALUES (10000000, '2019-09-10', '7:45 PM', 4);
+INSERT 0 1
+Time: 1.372 ms
+
+opentable=# INSERT INTO reservations(restaurant_id, reservation_date, reservation_time, guests) VALUES (9900000, '2019-09-10', '7:45 PM', 4);
+INSERT 0 1
+Time: 1.470 ms
+
+opentable=# INSERT INTO reservations(restaurant_id, reservation_date, reservation_time, guests) VALUES (9905000, '2019-06-10', '7:45 PM', 4);
+INSERT 0 1
+Time: 4.697 ms
+
 
 ===========================================================================================================================================================
 POSTGRES DELETE
@@ -118,6 +130,18 @@ opentable=# DELETE FROM reservations WHERE id=9999999;
 DELETE 1
 Time: 2.793 ms
 
+
+opentable=# DELETE from reservations WHERE reservation_id=20000000;
+DELETE 1
+Time: 5.687 ms
+
+opentable=# DELETE from reservations WHERE reservation_id=19999999;
+DELETE 1
+Time: 4.672 ms
+
+opentable=# DELETE from reservations WHERE reservation_id=19999998; 
+DELETE 1
+Time: 8.929 ms
 
 ===========================================================================================================================================================
 CASSANDRA GET: QUERY RESULTS BY RESTAURANT ID (PRIMARY KEY, pre-cached)

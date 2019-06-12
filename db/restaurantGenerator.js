@@ -5,13 +5,8 @@ var faker = require('faker');
 var restaurantNames = require('./restaurantNames.js');
 
 const seats = () => faker.random.number({
-  min: 2,
+  min: 5,
   max: 10,
-});
-
-const booked = () => faker.random.number({
-  min: 3,
-  max: 15,
 });
 
 const randomRestaurantIndex = () => faker.random.number({
@@ -25,7 +20,6 @@ const dataGen = () => {
     writer.write({
       id: i,
       name: restaurantNames[randomRestaurantIndex()]  + ' ' + i,
-      booked: booked(),
       '6:00 PM': seats(),
       '6:15 PM': seats(),
       '6:30 PM': seats(),

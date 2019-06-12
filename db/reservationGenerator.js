@@ -10,7 +10,7 @@ const randomIndex = () => faker.random.number({
 
 const randomGuests = () => faker.random.number({
   min: 1,
-  max: 6,
+  max: 5,
 });
 
 const timeslots = [
@@ -32,7 +32,7 @@ const randomRestaurantId = () => faker.random.number({
   max: 10000000,
 });
 
-var i = 20000001;
+var i = 30000001;
 var encoding = 'utf8';
 var callback = () => { console.log('Data Generation Complete!') };
 writeCSV();
@@ -45,7 +45,7 @@ function writeCSV(){
       var data = {
         reservation_id: i,
         restaurant_id: randomRestaurantId(),
-        reservation_date: JSON.stringify(faker.date.between('2019-06-01', '2019-12-31')).slice(1, 11), 
+        reservation_date: JSON.stringify(faker.date.between('2019-06-15', '2019-07-15')).slice(1, 11), 
         reservation_time: timeslots[randomIndex()], 
         guests: randomGuests(),
       }
@@ -54,7 +54,7 @@ function writeCSV(){
       var data = {
         reservation_id: i,
         restaurant_id: randomRestaurantId(),
-        reservation_date: JSON.stringify(faker.date.between('2019-06-01', '2019-12-31')).slice(1, 11), 
+        reservation_date: JSON.stringify(faker.date.between('2019-06-15', '2019-07-15')).slice(1, 11), 
         reservation_time: timeslots[randomIndex()], 
         guests: randomGuests(),
       }

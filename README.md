@@ -49,12 +49,12 @@ npm start
 
 ## RESTful APIs
 
-| Type          | Endpoint                       | Description                                                            |
-| ------------- | ------------------------------ | -----------------------------------------------------------------------|
-| GET           | `/restaurant/:id/reservations` | Get the reservation info for a specific restaurant                     |
-| POST          | `/restaurant/`                 | Create a new restaurant listing                                        |
-| PUT           | `/restaurant/:id/reservations` | Update the availability of a time slot for a specific restaurant       |
-| DELETE        | `/restaurant/:id`              | Delete a restaurant listing                                            |
+| Type          | Endpoint                                       | Description                                                                   |
+| ------------- | ---------------------------------------------- | ------------------------------------------------------------------------------|
+| GET           | `/restaurant/:id/reservations`                 | Get the reservation info for a specific restaurant                            |
+| POST          | `/restaurant/:id/reservations`                 | Create a new restaurant reservation                                           |
+| PUT           | `/restaurant/:id/reservations/:reservation_id` | Update the time/date/guests for a specific reservation of specific restaurant |
+| DELETE        | `restaurant/:id/reservations/:reservation_id`  | Delete a reservation                                                          |
 
 
 ## GET
