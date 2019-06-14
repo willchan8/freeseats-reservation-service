@@ -115,18 +115,28 @@ class Reservations extends React.Component {
 
   checkAvailability() {
     const timeSlots = [];
-
-    delete this.state.allData.id;
-    delete this.state.allData.booked;
-    delete this.state.allData.name;
+    
+    const timeData = {
+      '6:00 PM': this.state.allData[0]['6:00 PM'],
+      '6:15 PM': this.state.allData[0]['6:15 PM'],
+      '6:30 PM': this.state.allData[0]['6:30 PM'],
+      '6:45 PM': this.state.allData[0]['6:45 PM'],
+      '7:00 PM': this.state.allData[0]['7:00 PM'],
+      '7:15 PM': this.state.allData[0]['7:15 PM'],
+      '7:30 PM': this.state.allData[0]['7:30 PM'],
+      '7:45 PM': this.state.allData[0]['7:45 PM'],
+      '8:00 PM': this.state.allData[0]['8:00 PM'],
+      '8:15 PM': this.state.allData[0]['8:15 PM'],
+      '8:15 PM': this.state.allData[0]['8:30 PM'],
+    }
 
     const checkTime = this.state.time.split(' ');
     const checkHour = checkTime[0].split(':');
     const hour = Number(checkHour[0]);
 
-    for (const key in this.state.allData) {
-      if (this.state.allData[key] >= this.state.partySize) {
-        timeSlots.push(key);
+    for (const time in timeData) {
+      if (timeData[time] >= this.state.partySize) {
+        timeSlots.push(time);
       }
     }
 
@@ -196,26 +206,27 @@ class Reservations extends React.Component {
       });
     }
 
-    if (this.state.partySize > 6) {
-      this.setState({
-        tooBig: true,
-        findTableBtn: false,
-        showNextAvail: false,
-        noAvailMsg: false,
-        tooFar: false,
-        availTimes: false,
-      });
-    }
+    // if (this.state.partySize > 6) {
+    //   this.setState({
+    //     tooBig: true,
+    //     findTableBtn: false,
+    //     showNextAvail: false,
+    //     noAvailMsg: false,
+    //     tooFar: false,
+    //     availTimes: false,
+    //   });
+    // }
   }
 
   getBookings() {
-    let parseId = this.props.urlId.split('/');
+    let parseId = window.location.href.split('/');
     const id = parseId[parseId.length - 1];
-    axios.get(`http://localhost:3020/${id}/reservations`)
+    axios.get(`http://localhost:3020/restaurants/${id}/reservations`)
       .then((res) => {
+        const bookings = res.data.length;
         this.setState({
-          bookings: res.data.booked,
-          resName: res.data.name,
+          bookings: bookings,
+          resName: res.data[0].name,
           allData: res.data,
         });
       })

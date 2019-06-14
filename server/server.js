@@ -1,7 +1,10 @@
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+
+// const Availability = require('../db/db.js');
 
 const db = require('../db/queries.js');
 
@@ -11,17 +14,17 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+// Serve all static files
+app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.get('/:id', (req, res) => {
   if (!req.params.id) {
-    res.status(400);
+    res.status(500);
     res.end();
   } else {
-    res.sendFile('index.html', { root: path.resolve(__dirname, '../public') });
+    res.sendFile(path.join(__dirname, '../public/index.html'));
   }
 });
-
 
 // READ
 app.get('/restaurants/:id/reservations', (req, res) => {
