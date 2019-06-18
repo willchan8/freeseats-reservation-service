@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS opentable;
+DROP database IF EXISTS opentable;
 
-CREATE SCHEMA opentable;
+CREATE database opentable;
 
 \c opentable;
 
