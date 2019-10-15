@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
-// const Availability = require('../db/db.js');
-
 const db = require('../db/queries.js');
 
 const app = express();
@@ -60,18 +58,6 @@ app.post('/restaurants/:id/reservations', (req, res) => {
       res.status(201).send(data.rows);
     }
   })
-});
-
-// UPDATE
-app.put('restaurant/:id/reservations/:reservation_id', (req, res) => {
-  const restaurant_id = req.params.id;
-  const bookings = req.body.bookings;
-});
-
-// DELETE
-app.delete('restaurants/:id/reservations/:reservation_id', (req, res) => {
-  const restaurant_id = req.params.id;
-  const reservation_id = req.params.reservation_id;
 });
 
 module.exports = app;

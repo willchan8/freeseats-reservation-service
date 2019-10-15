@@ -37,6 +37,7 @@ var encoding = 'utf8';
 var callback = () => { console.log('Data Generation Complete!') };
 writeCSV();
 writer.pipe(fs.createWriteStream('reservationData.csv'));
+
 function writeCSV(){
   var ok = true 
   do {
